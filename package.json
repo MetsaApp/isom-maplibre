@@ -1,6 +1,6 @@
 {
   "name": "@kortmyre/isom-maplibre",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ISOM 2017-2 map styling for MapLibre GL: correct orienteering-map rendering for vector data carrying ISOM symbol codes",
   "license": "MIT",
   "type": "module",
