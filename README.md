@@ -55,6 +55,20 @@ Coordinates must be lng/lat (EPSG:4326), as with any MapLibre GeoJSON source.
 You can also pass nothing and feed data later via
 `map.getSource(table).setData(fc)` for each table in `DETAIL_TABLES`.
 
+## Generating
+
+`src/style.json` is generated, never hand-edited: the Go package in this repo
+(`isomstyle.go`, `layers.go`, `style.go`) is the source of truth, deriving
+every layer from ISOM 2017-2 symbol dimensions, palette, and stacking order.
+Regenerate with:
+
+```
+go generate ./...
+```
+
+The conformance tests (`go test ./...`) check the emitted style against the
+spec's dimension and color tables.
+
 ## Installing
 
 Published to GitHub Packages. Note that GitHub Packages requires an auth token
