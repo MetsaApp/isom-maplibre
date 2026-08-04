@@ -1,0 +1,34 @@
+{
+  "name": "@kortmyre/isom-maplibre",
+  "version": "0.1.0",
+  "description": "ISOM 2017-2 map styling for MapLibre GL: correct orienteering-map rendering for vector data carrying ISOM symbol codes",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malpou/isom-maplibre"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./style.json": "./dist/style.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node scripts/check.mjs"
+  },
+  "peerDependencies": {
+    "maplibre-gl": ">=4"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.14",
+    "maplibre-gl": "^5.24.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
