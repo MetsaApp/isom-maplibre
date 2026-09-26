@@ -17,12 +17,12 @@ The package is published to GitHub Packages, which requires a token for
 with `read:packages` and add to your `.npmrc`:
 
 ```
-@malpou:registry=https://npm.pkg.github.com
+@metsaapp:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
 ```sh
-npm install @malpou/isom-maplibre maplibre-gl
+npm install @metsaapp/isom-maplibre maplibre-gl
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ pattern and symbol images at runtime:
 
 ```ts
 import maplibregl from "maplibre-gl";
-import { isomGeojsonStyle, registerIsomIcons } from "@malpou/isom-maplibre";
+import { isomGeojsonStyle, registerIsomIcons } from "@metsaapp/isom-maplibre";
 
 const map = new maplibregl.Map({
   container: "map",
@@ -47,12 +47,12 @@ registerIsomIcons(map);
 Tables you leave out start empty; fill them later with
 `map.getSource(table).setData(featureCollection)`. `DETAIL_TABLES` lists them.
 The style without data is also exported as
-`@malpou/isom-maplibre/style.geojson.json`.
+`@metsaapp/isom-maplibre/style.geojson.json`.
 
 ### Vector tiles
 
 ```ts
-import style from "@malpou/isom-maplibre/style.json";
+import style from "@metsaapp/isom-maplibre/style.json";
 ```
 
 The style reads one vector source per table from `/tiles/<table>` (TileJSON)
@@ -131,12 +131,12 @@ for a tile server. It reads the definition embedded in the module unless
 `-spec` names another file:
 
 ```sh
-go run github.com/malpou/isom-maplibre/cmd/genstyle@latest \
+go run github.com/MetsaApp/isom-maplibre/cmd/genstyle@latest \
   -style style.json -geojson-style style.geojson.json -icons icons.json -sprites sprites/
 ```
 
 Go programs get the parsed definition from `isomstyle.Default()` in
-`github.com/malpou/isom-maplibre/pkg/isomstyle` (`Load` and `Parse` take
+`github.com/MetsaApp/isom-maplibre/pkg/isomstyle` (`Load` and `Parse` take
 another one), and render it with `Style`, `GeojsonStyle` and `Icons`.
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org);

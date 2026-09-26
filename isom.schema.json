@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/malpou/isom-maplibre/isom.schema.json",
+  "$id": "https://github.com/MetsaApp/isom-maplibre/isom.schema.json",
   "title": "ISOM MapLibre style definition",
   "description": "Source definition for the generated ISOM 2017-2 MapLibre style. Dimensions are in mm at scale.specDenominator.",
   "type": "object",
