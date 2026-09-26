@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	isommaplibre "github.com/malpou/isom-maplibre"
+	isommaplibre "github.com/MetsaApp/isom-maplibre"
 )
 
 func load(t *testing.T) *Spec {

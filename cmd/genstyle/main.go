@@ -14,7 +14,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/malpou/isom-maplibre/pkg/isomstyle"
+	"github.com/MetsaApp/isom-maplibre/pkg/isomstyle"
 )
 
 func main() {
