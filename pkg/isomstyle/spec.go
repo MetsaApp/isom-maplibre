@@ -19,7 +19,7 @@ import (
 	"github.com/santhosh-tekuri/jsonschema/v6"
 	"go.yaml.in/yaml/v3"
 
-	isommaplibre "github.com/malpou/isom-maplibre"
+	isommaplibre "github.com/MetsaApp/isom-maplibre"
 )
 
 // Spec is a parsed style definition. See isom.schema.json for field docs.
@@ -173,7 +173,7 @@ var schema = sync.OnceValues(func() (*jsonschema.Schema, error) {
 	if err != nil {
 		return nil, err
 	}
-	const url = "https://github.com/malpou/isom-maplibre/isom.schema.json" // its $id
+	const url = "https://github.com/MetsaApp/isom-maplibre/isom.schema.json" // its $id
 	c := jsonschema.NewCompiler()
 	if err := c.AddResource(url, doc); err != nil {
 		return nil, err
