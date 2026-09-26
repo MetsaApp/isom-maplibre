@@ -1,0 +1,4 @@
+# Written by `go generate ./...` from isom.yaml; collapsed in GitHub diffs.
+src/style.json linguist-generated=true
+src/style.geojson.json linguist-generated=true
+src/icons.json linguist-generated=true
