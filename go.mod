@@ -1,4 +1,4 @@
-module github.com/malpou/isom-maplibre
+module github.com/MetsaApp/isom-maplibre
 
 go 1.26
 
