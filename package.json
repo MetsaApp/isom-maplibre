@@ -1,6 +1,6 @@
 {
   "name": "@metsa/isom-maplibre",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ISOM 2017-2 orienteering map style for MapLibre GL, generated from the ISOM symbol dimensions",
   "keywords": [
     "orienteering",
