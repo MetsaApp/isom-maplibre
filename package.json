@@ -1,0 +1,46 @@
+{
+  "name": "@malpou/isom-maplibre",
+  "version": "0.0.0",
+  "description": "ISOM 2017-2 orienteering map style for MapLibre GL, generated from the ISOM symbol dimensions",
+  "keywords": [
+    "orienteering",
+    "isom",
+    "maplibre",
+    "maplibre-gl",
+    "map-style",
+    "cartography"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malpou/isom-maplibre.git"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./style.json": "./dist/style.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "node scripts/check.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "peerDependencies": {
+    "maplibre-gl": ">=4"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.14",
+    "maplibre-gl": "^5.24.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "homepage": "https://github.com/malpou/isom-maplibre#readme",
+  "bugs": "https://github.com/malpou/isom-maplibre/issues"
+}

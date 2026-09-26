@@ -1,0 +1,2858 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "paint": {
+        "background-color": "#FFFFFF"
+      },
+      "type": "background"
+    },
+    {
+      "id": "coverage-base",
+      "minzoom": 10,
+      "paint": {
+        "fill-color": "#FFFFFF"
+      },
+      "source": "coverage",
+      "source-layer": "coverage",
+      "type": "fill"
+    },
+    {
+      "id": "coverage-overview",
+      "maxzoom": 10,
+      "paint": {
+        "fill-color": "#D15C00",
+        "fill-opacity": 0.35
+      },
+      "source": "coverage",
+      "source-layer": "coverage",
+      "type": "fill"
+    },
+    {
+      "id": "coverage-overview-line",
+      "maxzoom": 10,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-width": 1.2
+      },
+      "source": "coverage",
+      "source-layer": "coverage",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "401.000"
+      ],
+      "id": "ov00-401.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "402.000"
+      ],
+      "id": "ov01-402.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "403.000"
+      ],
+      "id": "ov02-403.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "404.000"
+      ],
+      "id": "ov03-404.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "412.000"
+      ],
+      "id": "ov04-412.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "413.000"
+      ],
+      "id": "ov05-413.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "520.000"
+      ],
+      "id": "ov06-520.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#9EBA1D"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "405.000"
+      ],
+      "id": "ov07-405.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#FFFFFF"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "406.000"
+      ],
+      "id": "ov08-406.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#C5FFB9"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "408.000"
+      ],
+      "id": "ov09-408.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#8BFF74"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "407.000"
+      ],
+      "id": "ov10-407.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:407"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "409.000"
+      ],
+      "id": "ov11-409.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:409"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "410.000"
+      ],
+      "id": "ov12-410.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#3DFF17"
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "302.000"
+      ],
+      "id": "ov13-302.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#80FFFF"
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "308.000"
+      ],
+      "id": "ov14-308.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:308"
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.001"
+      ],
+      "id": "ov15-521.001",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#595959"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "ov16-501.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#E8AD80"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "502.000"
+      ],
+      "id": "ov17-502.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          3.288,
+          22,
+          420.86
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "502.000"
+      ],
+      "id": "ov18-502.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#E8AD80",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.701,
+          22,
+          217.73
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "301.000"
+      ],
+      "id": "ov19-301.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#00FFFF"
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "302.000"
+      ],
+      "id": "ov20-302.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.567,
+          22,
+          72.58
+        ]
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "304.000"
+      ],
+      "id": "ov21-304.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.701,
+          22,
+          217.73
+        ]
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "305.000"
+      ],
+      "id": "ov22-305.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "306.000"
+      ],
+      "id": "ov23-306.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-dasharray": [
+          6.95,
+          1.39
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "301.000"
+      ],
+      "id": "ov32-301.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "ov33-501.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "503.000"
+      ],
+      "id": "ov34-503.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.984,
+          22,
+          253.95
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "504.000"
+      ],
+      "id": "ov35-504.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          8.57,
+          0.71
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.984,
+          22,
+          253.95
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "505.000"
+      ],
+      "id": "ov36-505.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "506.000"
+      ],
+      "id": "ov37-506.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          5.56,
+          1.39
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "507.000"
+      ],
+      "id": "ov38-507.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          5.56,
+          1.39,
+          5.56,
+          4.45
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "overview",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "509.000"
+      ],
+      "id": "ov39-509.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          2.551,
+          22,
+          326.53
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "509.000"
+      ],
+      "id": "ov40-509.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-dasharray": [
+          4,
+          6
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "510.000"
+      ],
+      "id": "ov41-510.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "516.000"
+      ],
+      "id": "ov42-516.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "415.000"
+      ],
+      "id": "ov43-415.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "overview",
+      "source-layer": "vegetation_areas",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "511.000"
+      ],
+      "id": "ov44-511.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          3.061,
+          22,
+          391.81
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "511.000"
+      ],
+      "id": "ov45-511.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.474,
+          22,
+          188.67
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "515.000"
+      ],
+      "id": "ov46-515.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "529.000"
+      ],
+      "id": "ov47-529.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.000"
+      ],
+      "id": "ov48-521.000",
+      "maxzoom": 13,
+      "paint": {
+        "fill-color": "#000000"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.001"
+      ],
+      "id": "ov49-521.001",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "maxzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.134,
+          22,
+          145.15
+        ]
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "401.000"
+      ],
+      "id": "d00-401.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "402.000"
+      ],
+      "id": "d01-402.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "403.000"
+      ],
+      "id": "d02-403.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "404.000"
+      ],
+      "id": "d03-404.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "412.000"
+      ],
+      "id": "d04-412.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFBA36"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "413.000"
+      ],
+      "id": "d05-413.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFDD9B"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "520.000"
+      ],
+      "id": "d06-520.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#9EBA1D"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "405.000"
+      ],
+      "id": "d07-405.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#FFFFFF"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "406.000"
+      ],
+      "id": "d08-406.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#C5FFB9"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "408.000"
+      ],
+      "id": "d09-408.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#8BFF74"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "407.000"
+      ],
+      "id": "d10-407.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:407"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "409.000"
+      ],
+      "id": "d11-409.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:409"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "410.000"
+      ],
+      "id": "d12-410.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#3DFF17"
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "302.000"
+      ],
+      "id": "d13-302.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#80FFFF"
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "308.000"
+      ],
+      "id": "d14-308.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-pattern": "isom:308"
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.001"
+      ],
+      "id": "d15-521.001",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#595959"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "d16-501.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#E8AD80"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "502.000"
+      ],
+      "id": "d17-502.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          3.288,
+          22,
+          420.86
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "502.000"
+      ],
+      "id": "d18-502.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#E8AD80",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.701,
+          22,
+          217.73
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "301.000"
+      ],
+      "id": "d19-301.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#00FFFF"
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "302.000"
+      ],
+      "id": "d20-302.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.567,
+          22,
+          72.58
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "304.000"
+      ],
+      "id": "d21-304.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.701,
+          22,
+          217.73
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "305.000"
+      ],
+      "id": "d22-305.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "306.000"
+      ],
+      "id": "d23-306.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-dasharray": [
+          6.95,
+          1.39
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "101.000"
+      ],
+      "id": "d24-101.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "101.001"
+      ],
+      "id": "d25-101.001",
+      "layout": {
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-image": "isom:slope",
+        "icon-rotation-alignment": "map",
+        "icon-size": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1,
+          22,
+          128
+        ],
+        "symbol-placement": "line-center"
+      },
+      "minzoom": 13,
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "102.000"
+      ],
+      "id": "d26-102.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "103.000"
+      ],
+      "id": "d27-103.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-dasharray": [
+          20,
+          2
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.567,
+          22,
+          72.58
+        ]
+      },
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "104.000"
+      ],
+      "id": "d28-104.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "105.000"
+      ],
+      "id": "d29-105.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#D15C00",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "contours",
+      "source-layer": "contours",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "109.000"
+      ],
+      "id": "d30-109.000",
+      "minzoom": 13,
+      "paint": {
+        "circle-color": "#D15C00",
+        "circle-radius": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.42,
+          22,
+          181.76
+        ]
+      },
+      "source": "knolls_points",
+      "source-layer": "knolls_points",
+      "type": "circle"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "111.000"
+      ],
+      "id": "d31-111.000",
+      "layout": {
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-image": "isom:111",
+        "icon-rotation-alignment": "map",
+        "icon-size": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1,
+          22,
+          128
+        ]
+      },
+      "minzoom": 13,
+      "source": "knolls_points",
+      "source-layer": "knolls_points",
+      "type": "symbol"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "301.000"
+      ],
+      "id": "d32-301.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "d33-501.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "503.000"
+      ],
+      "id": "d34-503.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.984,
+          22,
+          253.95
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "504.000"
+      ],
+      "id": "d35-504.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          8.57,
+          0.71
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.984,
+          22,
+          253.95
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "505.000"
+      ],
+      "id": "d36-505.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "506.000"
+      ],
+      "id": "d37-506.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          5.56,
+          1.39
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "507.000"
+      ],
+      "id": "d38-507.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-dasharray": [
+          5.56,
+          1.39,
+          5.56,
+          4.45
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "paths",
+      "source-layer": "paths",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "509.000"
+      ],
+      "id": "d39-509.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          2.551,
+          22,
+          326.53
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "509.000"
+      ],
+      "id": "d40-509.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-dasharray": [
+          4,
+          6
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "510.000"
+      ],
+      "id": "d41-510.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "516.000"
+      ],
+      "id": "d42-516.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "415.000"
+      ],
+      "id": "d43-415.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.794,
+          22,
+          101.63
+        ]
+      },
+      "source": "vegetation_areas",
+      "source-layer": "vegetation_areas",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "511.000"
+      ],
+      "id": "d44-511.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          3.061,
+          22,
+          391.81
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "511.000"
+      ],
+      "id": "d45-511.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.474,
+          22,
+          188.67
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "515.000"
+      ],
+      "id": "d46-515.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "529.000"
+      ],
+      "id": "d47-529.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.000"
+      ],
+      "id": "d48-521.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#000000"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "521.001"
+      ],
+      "id": "d49-521.001",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.134,
+          22,
+          145.15
+        ]
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "201.000"
+      ],
+      "id": "d50-201.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.984,
+          22,
+          253.95
+        ]
+      },
+      "source": "cliffs",
+      "source-layer": "cliffs",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "202.000"
+      ],
+      "id": "d51-202.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#000000",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.417,
+          22,
+          181.38
+        ]
+      },
+      "source": "cliffs",
+      "source-layer": "cliffs",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "206.000"
+      ],
+      "id": "d52-206.000",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#000000"
+      },
+      "source": "cliffs",
+      "source-layer": "cliffs",
+      "type": "fill"
+    }
+  ],
+  "name": "ISOM 2017-2 (1:10000)",
+  "sources": {
+    "cliffs": {
+      "type": "vector",
+      "url": "/tiles/cliffs"
+    },
+    "contours": {
+      "type": "vector",
+      "url": "/tiles/contours"
+    },
+    "coverage": {
+      "type": "vector",
+      "url": "/tiles/coverage"
+    },
+    "knolls_points": {
+      "type": "vector",
+      "url": "/tiles/knolls_points"
+    },
+    "manmade": {
+      "type": "vector",
+      "url": "/tiles/manmade"
+    },
+    "overview": {
+      "type": "vector",
+      "url": "/tiles/overview"
+    },
+    "paths": {
+      "type": "vector",
+      "url": "/tiles/paths"
+    },
+    "vegetation_areas": {
+      "type": "vector",
+      "url": "/tiles/vegetation_areas"
+    },
+    "water": {
+      "type": "vector",
+      "url": "/tiles/water"
+    }
+  },
+  "sprite": [
+    {
+      "id": "isom",
+      "url": "/sprite/isom"
+    }
+  ],
+  "version": 8
+}
