@@ -1,10 +1,11 @@
-// genstyle generates the MapLibre style and its images from an ISOM style
-// definition. Each output flag is optional; at least one is required.
+// genstyle generates the MapLibre styles and their images from an ISOM style
+// definition, by default the one embedded in this module. Each output flag is
+// optional; at least one is required.
 //
-//	genstyle -spec isom.yaml -style style.json -icons icons.json -sprites sprites/
+//	genstyle -style style.json -geojson-style style.geojson.json -icons icons.json -sprites sprites/
 package main
 
-//go:generate go run . -spec ../../isom.yaml -style ../../src/style.json -icons ../../src/icons.json
+//go:generate go run . -style ../../src/style.json -geojson-style ../../src/style.geojson.json -icons ../../src/icons.json
 
 import (
 	"errors"
@@ -17,27 +18,39 @@ import (
 )
 
 func main() {
-	specPath := flag.String("spec", "isom.yaml", "style definition to read")
-	stylePath := flag.String("style", "", "write the MapLibre style JSON here")
+	specPath := flag.String("spec", "", "style definition to read (default: the embedded isom.yaml)")
+	stylePath := flag.String("style", "", "write the vector-tile MapLibre style JSON here")
+	geojsonPath := flag.String("geojson-style", "", "write the GeoJSON-source MapLibre style JSON here")
 	iconsPath := flag.String("icons", "", "write the image SVGs as a JSON object here")
 	spritesDir := flag.String("sprites", "", "write one <key>.svg per image into this directory")
 	flag.Parse()
-	if err := run(*specPath, *stylePath, *iconsPath, *spritesDir); err != nil {
+	if err := run(*specPath, *stylePath, *geojsonPath, *iconsPath, *spritesDir); err != nil {
 		fmt.Fprintln(os.Stderr, "genstyle:", err)
 		os.Exit(1)
 	}
 }
 
-func run(specPath, stylePath, iconsPath, spritesDir string) error {
-	if stylePath == "" && iconsPath == "" && spritesDir == "" {
-		return errors.New("nothing to write: pass -style, -icons and/or -sprites")
+func run(specPath, stylePath, geojsonPath, iconsPath, spritesDir string) error {
+	if stylePath == "" && geojsonPath == "" && iconsPath == "" && spritesDir == "" {
+		return errors.New("nothing to write: pass -style, -geojson-style, -icons and/or -sprites")
 	}
-	spec, err := isomstyle.Load(specPath)
+	var spec *isomstyle.Spec
+	var err error
+	if specPath == "" {
+		spec, err = isomstyle.Default()
+	} else {
+		spec, err = isomstyle.Load(specPath)
+	}
 	if err != nil {
 		return err
 	}
 	if stylePath != "" {
 		if err := write(stylePath, spec.StyleJSON); err != nil {
+			return err
+		}
+	}
+	if geojsonPath != "" {
+		if err := write(geojsonPath, spec.GeojsonStyleJSON); err != nil {
 			return err
 		}
 	}
