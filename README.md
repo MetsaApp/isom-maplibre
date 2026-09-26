@@ -12,18 +12,11 @@ ISOM 2017-2 symbol set.
 
 ## Install
 
-The package is published to GitHub Packages, which requires a token for
-`npm install` even for public packages. Create a classic personal access token
-with `read:packages` and add to your `.npmrc`:
-
-```
-@metsaapp:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
 ```sh
-npm install @metsaapp/isom-maplibre maplibre-gl
+npm install @metsa/isom-maplibre maplibre-gl
 ```
+
+Releases are published to npm with provenance.
 
 ## Usage
 
@@ -35,7 +28,7 @@ pattern and symbol images at runtime:
 
 ```ts
 import maplibregl from "maplibre-gl";
-import { isomGeojsonStyle, registerIsomIcons } from "@metsaapp/isom-maplibre";
+import { isomGeojsonStyle, registerIsomIcons } from "@metsa/isom-maplibre";
 
 const map = new maplibregl.Map({
   container: "map",
@@ -47,12 +40,12 @@ registerIsomIcons(map);
 Tables you leave out start empty; fill them later with
 `map.getSource(table).setData(featureCollection)`. `DETAIL_TABLES` lists them.
 The style without data is also exported as
-`@metsaapp/isom-maplibre/style.geojson.json`.
+`@metsa/isom-maplibre/style.geojson.json`.
 
 ### Vector tiles
 
 ```ts
-import style from "@metsaapp/isom-maplibre/style.json";
+import style from "@metsa/isom-maplibre/style.json";
 ```
 
 The style reads one vector source per table from `/tiles/<table>` (TileJSON)
