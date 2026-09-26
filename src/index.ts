@@ -1,3 +1,4 @@
+import type { FeatureCollection } from "geojson";
 import type { GeoJSONSourceSpecification, Map, StyleSpecification } from "maplibre-gl";
 import geojsonStyle from "./style.geojson.json" with { type: "json" };
 import icons from "./icons.json" with { type: "json" };
@@ -17,7 +18,7 @@ export const DETAIL_TABLES = geojsonStyle.metadata["isom:tables"] as readonly Is
  * pass at every zoom, no sprite: registerIsomIcons supplies the images) with
  * the given FeatureCollections attached. Tables left out start empty. */
 export function isomGeojsonStyle(
-  data?: Partial<Record<IsomTable, GeoJSON.FeatureCollection>>,
+  data?: Partial<Record<IsomTable, FeatureCollection>>,
 ): StyleSpecification {
   const style = structuredClone(geojsonStyle) as unknown as StyleSpecification;
   for (const t of DETAIL_TABLES) {
