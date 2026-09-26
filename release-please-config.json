@@ -3,7 +3,7 @@
   "packages": {
     ".": {
       "release-type": "node",
-      "package-name": "@metsaapp/isom-maplibre",
+      "package-name": "@metsa/isom-maplibre",
       "include-component-in-tag": false,
       "bump-minor-pre-major": true,
       "initial-version": "0.1.0"

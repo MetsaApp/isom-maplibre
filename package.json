@@ -1,5 +1,5 @@
 {
-  "name": "@metsaapp/isom-maplibre",
+  "name": "@metsa/isom-maplibre",
   "version": "0.0.0",
   "description": "ISOM 2017-2 orienteering map style for MapLibre GL, generated from the ISOM symbol dimensions",
   "keywords": [
@@ -39,8 +39,8 @@
     "typescript": "^5.6.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "homepage": "https://github.com/MetsaApp/isom-maplibre#readme",
   "bugs": "https://github.com/MetsaApp/isom-maplibre/issues"

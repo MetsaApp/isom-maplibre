@@ -1,0 +1,30 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned actions current.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      go:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
