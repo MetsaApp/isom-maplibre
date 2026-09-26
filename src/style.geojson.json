@@ -8,1453 +8,6 @@
       "type": "background"
     },
     {
-      "id": "coverage-base",
-      "metadata": {
-        "isom:pass": "coverage"
-      },
-      "minzoom": 10,
-      "paint": {
-        "fill-color": "#FFFFFF"
-      },
-      "source": "coverage",
-      "source-layer": "coverage",
-      "type": "fill"
-    },
-    {
-      "id": "coverage-overview",
-      "maxzoom": 10,
-      "metadata": {
-        "isom:pass": "coverage"
-      },
-      "paint": {
-        "fill-color": "#D15C00",
-        "fill-opacity": 0.35
-      },
-      "source": "coverage",
-      "source-layer": "coverage",
-      "type": "fill"
-    },
-    {
-      "id": "coverage-overview-line",
-      "maxzoom": 10,
-      "metadata": {
-        "isom:pass": "coverage"
-      },
-      "paint": {
-        "line-color": "#D15C00",
-        "line-width": 1.2
-      },
-      "source": "coverage",
-      "source-layer": "coverage",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "401.000"
-      ],
-      "id": "ov00-401.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "401.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFBA36"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "402.000"
-      ],
-      "id": "ov01-402.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "402.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFBA36"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "403.000"
-      ],
-      "id": "ov02-403.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "403.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFDD9B"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "404.000"
-      ],
-      "id": "ov03-404.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "404.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFDD9B"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "412.000"
-      ],
-      "id": "ov04-412.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "412.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFBA36"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "413.000"
-      ],
-      "id": "ov05-413.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "413.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFDD9B"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "520.000"
-      ],
-      "id": "ov06-520.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "520.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#9EBA1D"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "405.000"
-      ],
-      "id": "ov07-405.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "405.000",
-        "isom:group": "white",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#FFFFFF"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "406.000"
-      ],
-      "id": "ov08-406.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "406.000",
-        "isom:group": "green30",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#C5FFB9"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "408.000"
-      ],
-      "id": "ov09-408.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "408.000",
-        "isom:group": "green60",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#8BFF74"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "407.000"
-      ],
-      "id": "ov10-407.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "407.000",
-        "isom:group": "green",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-pattern": "isom:407"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "409.000"
-      ],
-      "id": "ov11-409.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "409.000",
-        "isom:group": "green",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-pattern": "isom:409"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "410.000"
-      ],
-      "id": "ov12-410.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "410.000",
-        "isom:group": "green",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#3DFF17"
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "302.000"
-      ],
-      "id": "ov13-302.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "302.000",
-        "isom:group": "blue-tints",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#80FFFF"
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "308.000"
-      ],
-      "id": "ov14-308.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "308.000",
-        "isom:group": "blue-tints",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-pattern": "isom:308"
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "521.001"
-      ],
-      "id": "ov15-521.001",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "521.001",
-        "isom:group": "black-tints",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#595959"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "501.000"
-      ],
-      "id": "ov16-501.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "501.000",
-        "isom:group": "brown50",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#E8AD80"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "502.000"
-      ],
-      "id": "ov17-502.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "502.000",
-        "isom:group": "brown50",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          3.288,
-          22,
-          420.86
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "502.000"
-      ],
-      "id": "ov18-502.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "502.000",
-        "isom:group": "brown50",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#E8AD80",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.701,
-          22,
-          217.73
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "301.000"
-      ],
-      "id": "ov19-301.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "301.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#00FFFF"
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "302.000"
-      ],
-      "id": "ov20-302.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "302.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.567,
-          22,
-          72.58
-        ]
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "304.000"
-      ],
-      "id": "ov21-304.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "304.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.701,
-          22,
-          217.73
-        ]
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "305.000"
-      ],
-      "id": "ov22-305.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "305.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "306.000"
-      ],
-      "id": "ov23-306.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "306.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-dasharray": [
-          6.95,
-          1.39
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "301.000"
-      ],
-      "id": "ov32-301.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "301.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "501.000"
-      ],
-      "id": "ov33-501.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "501.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.794,
-          22,
-          101.63
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "503.000"
-      ],
-      "id": "ov34-503.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "503.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.984,
-          22,
-          253.95
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "504.000"
-      ],
-      "id": "ov35-504.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "504.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-dasharray": [
-          8.57,
-          0.71
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.984,
-          22,
-          253.95
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "505.000"
-      ],
-      "id": "ov36-505.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "505.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-dasharray": [
-          8,
-          1
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.417,
-          22,
-          181.38
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "506.000"
-      ],
-      "id": "ov37-506.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "506.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-dasharray": [
-          5.56,
-          1.39
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "507.000"
-      ],
-      "id": "ov38-507.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "507.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-dasharray": [
-          5.56,
-          1.39,
-          5.56,
-          4.45
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "overview",
-      "source-layer": "paths",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "509.000"
-      ],
-      "id": "ov39-509.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "509.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          2.551,
-          22,
-          326.53
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "509.000"
-      ],
-      "id": "ov40-509.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "509.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#FFFFFF",
-        "line-dasharray": [
-          4,
-          6
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.417,
-          22,
-          181.38
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "510.000"
-      ],
-      "id": "ov41-510.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "510.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.794,
-          22,
-          101.63
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "516.000"
-      ],
-      "id": "ov42-516.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "516.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.794,
-          22,
-          101.63
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "415.000"
-      ],
-      "id": "ov43-415.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "415.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.794,
-          22,
-          101.63
-        ]
-      },
-      "source": "overview",
-      "source-layer": "vegetation_areas",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "511.000"
-      ],
-      "id": "ov44-511.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "511.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          3.061,
-          22,
-          391.81
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "511.000"
-      ],
-      "id": "ov45-511.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "511.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#FFFFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.474,
-          22,
-          188.67
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "515.000"
-      ],
-      "id": "ov46-515.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "515.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.417,
-          22,
-          181.38
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "529.000"
-      ],
-      "id": "ov47-529.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "529.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.417,
-          22,
-          181.38
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "521.000"
-      ],
-      "id": "ov48-521.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "521.000",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#000000"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "521.001"
-      ],
-      "id": "ov49-521.001",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "521.001",
-        "isom:group": "black",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "line-color": "#000000",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.134,
-          22,
-          145.15
-        ]
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "line"
-    },
-    {
       "filter": [
         "==",
         [
@@ -1469,12 +22,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFBA36"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1492,12 +43,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFBA36"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1515,12 +64,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFDD9B"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1538,12 +85,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFDD9B"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1561,12 +106,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFBA36"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1584,12 +127,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFDD9B"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1607,12 +148,10 @@
         "isom:group": "yellow",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#9EBA1D"
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "fill"
     },
     {
@@ -1630,12 +169,10 @@
         "isom:group": "white",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#FFFFFF"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1653,12 +190,10 @@
         "isom:group": "green30",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#C5FFB9"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1676,12 +211,10 @@
         "isom:group": "green60",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#8BFF74"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1699,12 +232,10 @@
         "isom:group": "green",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-pattern": "isom:407"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1722,12 +253,10 @@
         "isom:group": "green",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-pattern": "isom:409"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1745,12 +274,10 @@
         "isom:group": "green",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#3DFF17"
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "fill"
     },
     {
@@ -1768,12 +295,10 @@
         "isom:group": "blue-tints",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#80FFFF"
       },
       "source": "water",
-      "source-layer": "water",
       "type": "fill"
     },
     {
@@ -1791,12 +316,10 @@
         "isom:group": "blue-tints",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-pattern": "isom:308"
       },
       "source": "water",
-      "source-layer": "water",
       "type": "fill"
     },
     {
@@ -1814,12 +337,10 @@
         "isom:group": "black-tints",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#595959"
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "fill"
     },
     {
@@ -1837,12 +358,10 @@
         "isom:group": "brown50",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#E8AD80"
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "fill"
     },
     {
@@ -1864,7 +383,6 @@
         "isom:group": "brown50",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -1883,7 +401,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -1905,7 +422,6 @@
         "isom:group": "brown50",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#E8AD80",
         "line-width": [
@@ -1924,7 +440,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -1942,12 +457,10 @@
         "isom:group": "blue",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#00FFFF"
       },
       "source": "water",
-      "source-layer": "water",
       "type": "fill"
     },
     {
@@ -1969,7 +482,6 @@
         "isom:group": "blue",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#00FFFF",
         "line-width": [
@@ -1988,7 +500,6 @@
         ]
       },
       "source": "water",
-      "source-layer": "water",
       "type": "line"
     },
     {
@@ -2010,7 +521,6 @@
         "isom:group": "blue",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#00FFFF",
         "line-width": [
@@ -2029,7 +539,6 @@
         ]
       },
       "source": "water",
-      "source-layer": "water",
       "type": "line"
     },
     {
@@ -2051,7 +560,6 @@
         "isom:group": "blue",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#00FFFF",
         "line-width": [
@@ -2070,7 +578,6 @@
         ]
       },
       "source": "water",
-      "source-layer": "water",
       "type": "line"
     },
     {
@@ -2092,7 +599,6 @@
         "isom:group": "blue",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#00FFFF",
         "line-dasharray": [
@@ -2115,7 +621,6 @@
         ]
       },
       "source": "water",
-      "source-layer": "water",
       "type": "line"
     },
     {
@@ -2137,7 +642,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#D15C00",
         "line-width": [
@@ -2156,7 +660,6 @@
         ]
       },
       "source": "contours",
-      "source-layer": "contours",
       "type": "line"
     },
     {
@@ -2195,9 +698,7 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "source": "contours",
-      "source-layer": "contours",
       "type": "symbol"
     },
     {
@@ -2219,7 +720,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#D15C00",
         "line-width": [
@@ -2238,7 +738,6 @@
         ]
       },
       "source": "contours",
-      "source-layer": "contours",
       "type": "line"
     },
     {
@@ -2260,7 +759,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#D15C00",
         "line-dasharray": [
@@ -2283,7 +781,6 @@
         ]
       },
       "source": "contours",
-      "source-layer": "contours",
       "type": "line"
     },
     {
@@ -2305,7 +802,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#D15C00",
         "line-width": [
@@ -2324,7 +820,6 @@
         ]
       },
       "source": "contours",
-      "source-layer": "contours",
       "type": "line"
     },
     {
@@ -2346,7 +841,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#D15C00",
         "line-width": [
@@ -2365,7 +859,6 @@
         ]
       },
       "source": "contours",
-      "source-layer": "contours",
       "type": "line"
     },
     {
@@ -2383,7 +876,6 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "circle-color": "#D15C00",
         "circle-radius": [
@@ -2402,7 +894,6 @@
         ]
       },
       "source": "knolls_points",
-      "source-layer": "knolls_points",
       "type": "circle"
     },
     {
@@ -2440,9 +931,7 @@
         "isom:group": "brown",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "source": "knolls_points",
-      "source-layer": "knolls_points",
       "type": "symbol"
     },
     {
@@ -2464,7 +953,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2483,7 +971,6 @@
         ]
       },
       "source": "water",
-      "source-layer": "water",
       "type": "line"
     },
     {
@@ -2505,7 +992,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2524,7 +1010,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -2546,7 +1031,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2565,7 +1049,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -2587,7 +1070,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-dasharray": [
@@ -2610,7 +1092,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -2632,7 +1113,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-dasharray": [
@@ -2655,7 +1135,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -2677,7 +1156,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-dasharray": [
@@ -2700,7 +1178,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -2722,7 +1199,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-dasharray": [
@@ -2747,7 +1223,6 @@
         ]
       },
       "source": "paths",
-      "source-layer": "paths",
       "type": "line"
     },
     {
@@ -2769,7 +1244,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2788,7 +1262,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -2810,7 +1283,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#FFFFFF",
         "line-dasharray": [
@@ -2833,7 +1305,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -2855,7 +1326,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2874,7 +1344,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -2896,7 +1365,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2915,7 +1383,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -2937,7 +1404,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2956,7 +1422,6 @@
         ]
       },
       "source": "vegetation_areas",
-      "source-layer": "vegetation_areas",
       "type": "line"
     },
     {
@@ -2978,7 +1443,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -2997,7 +1461,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -3019,7 +1482,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#FFFFFF",
         "line-width": [
@@ -3038,7 +1500,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -3060,7 +1521,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -3079,7 +1539,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -3101,7 +1560,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -3120,7 +1578,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -3138,12 +1595,10 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#000000"
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "fill"
     },
     {
@@ -3165,7 +1620,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -3184,7 +1638,6 @@
         ]
       },
       "source": "manmade",
-      "source-layer": "manmade",
       "type": "line"
     },
     {
@@ -3206,7 +1659,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -3225,7 +1677,6 @@
         ]
       },
       "source": "cliffs",
-      "source-layer": "cliffs",
       "type": "line"
     },
     {
@@ -3247,7 +1698,6 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "line-color": "#000000",
         "line-width": [
@@ -3266,7 +1716,6 @@
         ]
       },
       "source": "cliffs",
-      "source-layer": "cliffs",
       "type": "line"
     },
     {
@@ -3284,12 +1733,10 @@
         "isom:group": "black",
         "isom:pass": "detail"
       },
-      "minzoom": 13,
       "paint": {
         "fill-color": "#000000"
       },
       "source": "cliffs",
-      "source-layer": "cliffs",
       "type": "fill"
     }
   ],
@@ -3307,47 +1754,54 @@
   "name": "ISOM 2017-2 (1:10000)",
   "sources": {
     "cliffs": {
-      "type": "vector",
-      "url": "/tiles/cliffs"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "contours": {
-      "type": "vector",
-      "url": "/tiles/contours"
-    },
-    "coverage": {
-      "type": "vector",
-      "url": "/tiles/coverage"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "knolls_points": {
-      "type": "vector",
-      "url": "/tiles/knolls_points"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "manmade": {
-      "type": "vector",
-      "url": "/tiles/manmade"
-    },
-    "overview": {
-      "type": "vector",
-      "url": "/tiles/overview"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "paths": {
-      "type": "vector",
-      "url": "/tiles/paths"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "vegetation_areas": {
-      "type": "vector",
-      "url": "/tiles/vegetation_areas"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     },
     "water": {
-      "type": "vector",
-      "url": "/tiles/water"
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
     }
   },
-  "sprite": [
-    {
-      "id": "isom",
-      "url": "/sprite/isom"
-    }
-  ],
   "version": 8
 }

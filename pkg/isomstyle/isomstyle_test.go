@@ -4,31 +4,27 @@ import (
 	"encoding/json"
 	"fmt"
 	"math"
-	"os"
 	"regexp"
 	"slices"
 	"strconv"
 	"strings"
 	"testing"
 
-	"github.com/santhosh-tekuri/jsonschema/v6"
-	"go.yaml.in/yaml/v3"
+	isommaplibre "github.com/malpou/isom-maplibre"
 )
-
-const specPath = "../../isom.yaml"
 
 func load(t *testing.T) *Spec {
 	t.Helper()
-	s, err := Load(specPath)
+	s, err := Default()
 	if err != nil {
 		t.Fatal(err)
 	}
 	return s
 }
 
-func styleLayers(t *testing.T) []map[string]any {
+func layersOf(t *testing.T, render func() ([]byte, error)) []map[string]any {
 	t.Helper()
-	b, err := load(t).StyleJSON()
+	b, err := render()
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -41,41 +37,22 @@ func styleLayers(t *testing.T) []map[string]any {
 	return style.Layers
 }
 
-func TestDefinitionMatchesSchema(t *testing.T) {
-	t.Parallel()
-	c := jsonschema.NewCompiler()
-	sch, err := c.Compile("../../isom.schema.json")
-	if err != nil {
-		t.Fatal(err)
-	}
-	b, err := os.ReadFile(specPath)
-	if err != nil {
-		t.Fatal(err)
-	}
-	var doc any
-	if err := yaml.Unmarshal(b, &doc); err != nil {
-		t.Fatal(err)
-	}
-	// Round-trip through JSON so the validator sees JSON types.
-	j, err := json.Marshal(doc)
-	if err != nil {
-		t.Fatal(err)
-	}
-	inst, err := jsonschema.UnmarshalJSON(strings.NewReader(string(j)))
-	if err != nil {
-		t.Fatal(err)
-	}
-	if err := sch.Validate(inst); err != nil {
-		t.Fatal(err)
-	}
+func styleLayers(t *testing.T) []map[string]any { return layersOf(t, load(t).StyleJSON) }
+
+// meta returns a layer's metadata value for key, or "" if it has none.
+func meta(l map[string]any, key string) string {
+	m, _ := l["metadata"].(map[string]any)
+	v, _ := m[key].(string)
+	return v
+}
+
+func detail(l map[string]any, code string) bool {
+	return meta(l, PassKey) == PassDetail && meta(l, CodeKey) == code
 }
 
 func TestParseRejectsBrokenDefinitions(t *testing.T) {
 	t.Parallel()
-	base, err := os.ReadFile(specPath)
-	if err != nil {
-		t.Fatal(err)
-	}
+	base := isommaplibre.Definition
 	cases := map[string][2]string{
 		"colour outside palette": {`fill: { color: *yellow } }`, `fill: { color: "#123456" } }`},
 		"unknown table":          {`table: vegetation_areas, fill: { color: *yellow } }`, `table: nope, fill: { color: *yellow } }`},
@@ -83,6 +60,9 @@ func TestParseRejectsBrokenDefinitions(t *testing.T) {
 		"two kinds":              {`fill: { color: *yellow } }`, `fill: { color: *yellow }, line: { color: *black, width: 1 } }`},
 		"unknown image":          {`image: "111"`, `image: "999"`},
 		"odd dash":               {`dash: [1.25, 0.25]`, `dash: [1.25, 0.25, 1]`},
+		"bad code":               {`code: "401.000"`, `code: "401"`},
+		"width over spacing":     {`width: 0.10, spacing: 0.30`, `width: 0.40, spacing: 0.30`},
+		"maxZoom below lockZoom": {`maxZoom: 22`, `maxZoom: 14`},
 	}
 	for name, c := range cases {
 		broken := strings.Replace(string(base), c[0], c[1], 1)
@@ -165,7 +145,7 @@ func TestDashArrayInWidthUnits(t *testing.T) {
 	t.Parallel()
 	// 505: width 0.25, dash 2.0/0.25 → 8 widths dash, 1 width gap.
 	for _, l := range styleLayers(t) {
-		if l["id"] == nil || !strings.HasPrefix(l["id"].(string), "d") || !strings.HasSuffix(l["id"].(string), "505.000") {
+		if !detail(l, "505.000") {
 			continue
 		}
 		d := l["paint"].(map[string]any)["line-dasharray"].([]any)
@@ -203,8 +183,7 @@ func TestLayerOrderFollowsColourStack(t *testing.T) {
 	layers := styleLayers(t)
 	pos := func(code, typ string) int {
 		for i, l := range layers {
-			id, _ := l["id"].(string)
-			if strings.HasPrefix(id, "d") && strings.HasSuffix(id, code) && l["type"] == typ {
+			if detail(l, code) && l["type"] == typ {
 				return i
 			}
 		}
@@ -230,6 +209,46 @@ func TestLayerOrderFollowsColourStack(t *testing.T) {
 	}
 	if layers[0]["id"] != "background" {
 		t.Error("background must be the bottom layer")
+	}
+}
+
+func TestEveryLayerCarriesMetadata(t *testing.T) {
+	t.Parallel()
+	for _, l := range styleLayers(t)[1:] {
+		pass := meta(l, PassKey)
+		symbol := meta(l, CodeKey) != "" && meta(l, GroupKey) != ""
+		if pass == "" || (pass != PassCoverage) != symbol {
+			t.Errorf("layer %v: metadata %v", l["id"], l["metadata"])
+		}
+	}
+}
+
+// The GeoJSON style is the detail pass of the tile style, re-sourced: same
+// layers in the same order, without source-layer or minzoom, and no sprite.
+func TestGeojsonStyleIsTheDetailPass(t *testing.T) {
+	t.Parallel()
+	s := load(t)
+	var want []map[string]any
+	for _, l := range styleLayers(t) {
+		if l["type"] == "background" || meta(l, PassKey) == PassDetail {
+			delete(l, "source-layer")
+			delete(l, "minzoom")
+			want = append(want, l)
+		}
+	}
+	gb, _ := json.Marshal(layersOf(t, s.GeojsonStyleJSON))
+	wb, _ := json.Marshal(want)
+	if string(gb) != string(wb) {
+		t.Error("geojson layers differ from the tile style's detail pass")
+	}
+	g := s.GeojsonStyle()
+	if _, ok := g["sprite"]; ok {
+		t.Error("geojson style must not reference a sprite")
+	}
+	for _, name := range s.Tables {
+		if src, _ := g["sources"].(map[string]any)[name].(map[string]any); src["type"] != "geojson" {
+			t.Errorf("table %s: no geojson source", name)
+		}
 	}
 }
 

@@ -29,8 +29,9 @@ npm install @malpou/isom-maplibre maplibre-gl
 
 ### In-memory GeoJSON
 
-`isomGeojsonStyle()` returns the style with one GeoJSON source per table, and
-`registerIsomIcons()` supplies the pattern and symbol images at runtime:
+`isomGeojsonStyle()` returns the GeoJSON style (one GeoJSON source per table,
+no sprite) with your data attached, and `registerIsomIcons()` supplies the
+pattern and symbol images at runtime:
 
 ```ts
 import maplibregl from "maplibre-gl";
@@ -45,6 +46,8 @@ registerIsomIcons(map);
 
 Tables you leave out start empty; fill them later with
 `map.getSource(table).setData(featureCollection)`. `DETAIL_TABLES` lists them.
+The style without data is also exported as
+`@malpou/isom-maplibre/style.geojson.json`.
 
 ### Vector tiles
 
@@ -63,6 +66,11 @@ large tile sets:
 - `coverage`: polygons outlining where data exists. From zoom 10 they are white
   paper under the map, so a basemap merged underneath never shows through; below
   zoom 10 they are a translucent brown patch marking where maps are.
+
+Every layer except the background carries `metadata` for selecting layers
+without parsing ids: `isom:pass` (`detail`, `overview` or `coverage`), and on
+symbol layers `isom:code` and `isom:group` (the ISOM colour group). The style's
+own `metadata["isom:tables"]` lists the tables in definition order.
 
 ## Data
 
@@ -107,8 +115,10 @@ MapLibre cannot draw some ISOM ornaments, so these symbols are simplified:
 [`isom.yaml`](isom.yaml) defines the whole style: scale, palette (referenced
 through YAML anchors), images, and the symbol stack. It is validated by
 [`isom.schema.json`](isom.schema.json), which editors with the YAML language
-server pick up automatically. `src/style.json` and `src/icons.json` are
-generated from it:
+server pick up automatically; the generator enforces the schema too, plus the
+cross-references it cannot express (palette colours, table and image names).
+`src/style.json`, `src/style.geojson.json` and `src/icons.json` are generated
+from it:
 
 ```sh
 go generate ./...   # regenerate src/
@@ -117,15 +127,17 @@ npm run build && npm test
 ```
 
 The generator is also usable directly, for example to write a sprite directory
-for a tile server:
+for a tile server. It reads the definition embedded in the module unless
+`-spec` names another file:
 
 ```sh
 go run github.com/malpou/isom-maplibre/cmd/genstyle@latest \
-  -spec isom.yaml -style style.json -icons icons.json -sprites sprites/
+  -style style.json -geojson-style style.geojson.json -icons icons.json -sprites sprites/
 ```
 
-Go programs can load a definition with
-`github.com/malpou/isom-maplibre/pkg/isomstyle`.
+Go programs get the parsed definition from `isomstyle.Default()` in
+`github.com/malpou/isom-maplibre/pkg/isomstyle` (`Load` and `Parse` take
+another one), and render it with `Style`, `GeojsonStyle` and `Icons`.
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org);
 release-please opens the release PR, and merging it tags the release and

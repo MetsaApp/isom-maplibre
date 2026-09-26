@@ -1,5 +1,6 @@
 // Package isomstyle turns the ISOM style definition (isom.yaml at the repository
-// root) into a MapLibre style and its pattern/point-symbol SVGs.
+// root, embedded and loaded by Default) into MapLibre styles and their
+// pattern/point-symbol SVGs.
 //
 // The definition stores every symbol dimension in mm at the ISOM specification
 // scale; Scale.Px is the one place they become CSS px.
@@ -7,14 +8,18 @@ package isomstyle
 
 import (
 	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"math"
 	"os"
-	"regexp"
 	"strings"
+	"sync"
 
+	"github.com/santhosh-tekuri/jsonschema/v6"
 	"go.yaml.in/yaml/v3"
+
+	isommaplibre "github.com/malpou/isom-maplibre"
 )
 
 // Spec is a parsed style definition. See isom.schema.json for field docs.
@@ -132,6 +137,9 @@ type Coverage struct {
 	} `yaml:"patch"`
 }
 
+// Default parses the definition shipped with this module (isom.yaml).
+func Default() (*Spec, error) { return Parse(isommaplibre.Definition) }
+
 // Load reads and validates a definition file.
 func Load(path string) (*Spec, error) {
 	b, err := os.ReadFile(path)
@@ -141,9 +149,13 @@ func Load(path string) (*Spec, error) {
 	return Parse(b)
 }
 
-// Parse decodes a definition (unknown fields are an error) and validates what
-// the schema cannot: colours come from the palette and every reference resolves.
+// Parse validates a definition against isom.schema.json, decodes it, and then
+// checks the relations the schema cannot express (see validate).
 func Parse(b []byte) (*Spec, error) {
+	if err := matchSchema(b); err != nil {
+		return nil, fmt.Errorf("isomstyle: %w", err)
+	}
+	// Unknown fields are an error so the struct cannot drift from the schema.
 	dec := yaml.NewDecoder(bytes.NewReader(b))
 	dec.KnownFields(true)
 	var s Spec
@@ -156,6 +168,40 @@ func Parse(b []byte) (*Spec, error) {
 	return &s, nil
 }
 
+var schema = sync.OnceValues(func() (*jsonschema.Schema, error) {
+	doc, err := jsonschema.UnmarshalJSON(bytes.NewReader(isommaplibre.Schema))
+	if err != nil {
+		return nil, err
+	}
+	const url = "https://github.com/malpou/isom-maplibre/isom.schema.json" // its $id
+	c := jsonschema.NewCompiler()
+	if err := c.AddResource(url, doc); err != nil {
+		return nil, err
+	}
+	return c.Compile(url)
+})
+
+func matchSchema(b []byte) error {
+	sch, err := schema()
+	if err != nil {
+		return fmt.Errorf("schema: %w", err)
+	}
+	var doc any
+	if err := yaml.Unmarshal(b, &doc); err != nil {
+		return err
+	}
+	// Round-trip through JSON so the validator sees JSON types.
+	j, err := json.Marshal(doc)
+	if err != nil {
+		return err
+	}
+	inst, err := jsonschema.UnmarshalJSON(bytes.NewReader(j))
+	if err != nil {
+		return err
+	}
+	return sch.Validate(inst)
+}
+
 // Symbols returns the stack flattened, bottom to top.
 func (s *Spec) Symbols() []Symbol {
 	var out []Symbol
@@ -165,15 +211,15 @@ func (s *Spec) Symbols() []Symbol {
 	return out
 }
 
-var codeRE = regexp.MustCompile(`^[1-7][0-9]{2}\.[0-9]{3}$`)
-
+// validate checks what the schema cannot express: colours come from the
+// palette, table and image references resolve, dashes come in pairs, and
+// dimensions that bound each other are ordered.
 func (s *Spec) validate() error {
 	var errs []error
 	fail := func(format string, a ...any) { errs = append(errs, fmt.Errorf(format, a...)) }
 
-	sc := s.Scale
-	if sc.SpecDenominator <= 0 || sc.MapDenominator <= 0 || sc.CSSDPI <= 0 || sc.MaxZoom <= sc.LockZoom {
-		fail("scale: denominators and cssDpi must be positive and maxZoom above lockZoom")
+	if s.Scale.MaxZoom <= s.Scale.LockZoom {
+		fail("scale: maxZoom must be above lockZoom")
 	}
 	palette := map[string]bool{}
 	for _, c := range s.Colors {
@@ -192,68 +238,43 @@ func (s *Spec) validate() error {
 	for key, img := range s.Images {
 		where := "image " + key
 		switch {
-		case countSet(img.LineRaster != nil, img.HalfCircle != nil, img.Tick != nil) != 1:
-			fail("%s: set exactly one of lineRaster, halfCircle, tick", where)
 		case img.LineRaster != nil:
-			r := img.LineRaster
-			color(where, r.Color)
-			if r.Angle != 0 && r.Angle != 90 {
-				fail("%s: angle must be 0 or 90", where)
-			}
-			if r.Width <= 0 || r.Spacing <= r.Width {
-				fail("%s: need 0 < width < spacing", where)
+			color(where, img.LineRaster.Color)
+			if img.LineRaster.Spacing <= img.LineRaster.Width {
+				fail("%s: width must be below spacing", where)
 			}
 		case img.HalfCircle != nil:
 			color(where, img.HalfCircle.Color)
-			if img.HalfCircle.Width <= 0 || img.HalfCircle.Diameter <= img.HalfCircle.Width {
-				fail("%s: need 0 < width < diameter", where)
+			if img.HalfCircle.Diameter <= img.HalfCircle.Width {
+				fail("%s: width must be below diameter", where)
 			}
 		case img.Tick != nil:
 			color(where, img.Tick.Color)
-			if img.Tick.Width <= 0 || img.Tick.Length <= 0 {
-				fail("%s: length and width must be positive", where)
-			}
 		}
 	}
 
 	for _, sym := range s.Symbols() {
 		where := "symbol " + sym.Code
-		if !codeRE.MatchString(sym.Code) {
-			fail("%s: code must look like 401.000", where)
-		}
 		if !tables[sym.Table] {
 			fail("%s: table %q is not in tables", where, sym.Table)
 		}
 		switch {
-		case countSet(sym.Fill != nil, sym.Line != nil, sym.Circle != nil, sym.Icon != nil) != 1:
-			fail("%s: set exactly one of fill, line, circle, icon", where)
+		case sym.Fill != nil && sym.Fill.Color != "":
+			color(where, sym.Fill.Color)
 		case sym.Fill != nil:
-			if (sym.Fill.Color == "") == (sym.Fill.Pattern == "") {
-				fail("%s: fill needs exactly one of color, pattern", where)
-			} else if sym.Fill.Color != "" {
-				color(where, sym.Fill.Color)
-			} else if s.Images[sym.Fill.Pattern].LineRaster == nil {
+			if s.Images[sym.Fill.Pattern].LineRaster == nil {
 				fail("%s: pattern %q is not a lineRaster image", where, sym.Fill.Pattern)
 			}
 		case sym.Line != nil:
 			color(where, sym.Line.Color)
-			if sym.Line.Width <= 0 {
-				fail("%s: width must be positive", where)
-			}
-			if n := len(sym.Line.Dash); n == 1 || n%2 == 1 {
+			if len(sym.Line.Dash)%2 == 1 {
 				fail("%s: dash needs dash/gap pairs", where)
 			}
 		case sym.Circle != nil:
 			color(where, sym.Circle.Color)
-			if sym.Circle.Diameter <= 0 {
-				fail("%s: diameter must be positive", where)
-			}
 		case sym.Icon != nil:
 			if _, ok := s.Images[sym.Icon.Image]; !ok {
 				fail("%s: image %q is not defined", where, sym.Icon.Image)
-			}
-			if p := sym.Icon.Placement; p != "" && p != "point" && p != "line-center" {
-				fail("%s: placement must be point or line-center", where)
 			}
 		}
 	}
@@ -269,16 +290,6 @@ func (s *Spec) validate() error {
 		color("tiles.coverage.patch", c.Patch.Color)
 	}
 	return errors.Join(errs...)
-}
-
-func countSet(bs ...bool) int {
-	n := 0
-	for _, b := range bs {
-		if b {
-			n++
-		}
-	}
-	return n
 }
 
 func round(v float64, places int) float64 {

@@ -15,7 +15,8 @@ jobs:
           go-version-file: go.mod
       - run: go test ./...
       - name: Generated files match isom.yaml
-        run: go generate ./... && git diff --exit-code src/
+        # intent-to-add makes a newly generated, untracked file show in the diff
+        run: go generate ./... && git add -N src/ && git diff --exit-code src/
       - uses: actions/setup-node@v4
         with:
           node-version: 22

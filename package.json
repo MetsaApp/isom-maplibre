@@ -18,7 +18,8 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./style.json": "./dist/style.json"
+    "./style.json": "./dist/style.json",
+    "./style.geojson.json": "./dist/style.geojson.json"
   },
   "types": "./dist/index.d.ts",
   "files": [

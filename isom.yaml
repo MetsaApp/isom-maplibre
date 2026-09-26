@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=./isom.schema.json
 #
 # The ISOM 2017-2 MapLibre style, defined once. `go generate ./...` turns this
-# file into src/style.json (the MapLibre style) and src/icons.json (the pattern
-# and point-symbol SVGs); never edit those by hand.
+# file into src/style.json (the vector-tile style), src/style.geojson.json (the
+# GeoJSON-source style) and src/icons.json (the pattern and point-symbol SVGs);
+# never edit those by hand.
 #
 # Every dimension is in mm at 1:15,000, exactly as ISOM 2017-2 states it, and
 # was cross-checked against the OpenOrienteering Mapper "ISOM 2017-2" symbol set.
