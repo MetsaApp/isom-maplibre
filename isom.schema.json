@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/malpou/isom-maplibre/isom.schema.json",
+  "title": "ISOM MapLibre style definition",
+  "description": "Source definition for the generated ISOM 2017-2 MapLibre style. Dimensions are in mm at scale.specDenominator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "scale", "colors", "tables", "images", "stack", "sprite", "tiles"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["specDenominator", "mapDenominator", "cssDpi", "lockZoom", "maxZoom"],
+      "properties": {
+        "specDenominator": { "type": "number", "exclusiveMinimum": 0, "description": "Scale the dimensions are given at (ISOM: 15000)." },
+        "mapDenominator": { "type": "number", "exclusiveMinimum": 0, "description": "Scale the map is rendered at." },
+        "cssDpi": { "type": "number", "exclusiveMinimum": 0 },
+        "lockZoom": { "type": "number", "minimum": 0, "description": "Zoom up to which every dimension is constant." },
+        "maxZoom": { "type": "number", "minimum": 0, "description": "Zoom where uniform magnification (x2 per level) stops." }
+      }
+    },
+    "colors": {
+      "type": "object",
+      "description": "The palette. Symbols must use one of these values (typically through YAML anchors).",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/hex" }
+    },
+    "tables": {
+      "type": "array",
+      "description": "Source layers the style reads; features carry a string isom_code.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/name" }
+    },
+    "images": {
+      "type": "object",
+      "description": "Fill patterns and point symbols, drawn from ISOM dimensions.",
+      "additionalProperties": { "$ref": "#/$defs/image" }
+    },
+    "stack": {
+      "type": "array",
+      "description": "Colour groups in ISOM colour order, bottom to top.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["group", "symbols"],
+        "properties": {
+          "group": { "type": "string", "minLength": 1 },
+          "symbols": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/symbol" } }
+        }
+      }
+    },
+    "sprite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "url"],
+      "properties": {
+        "id": { "$ref": "#/$defs/name", "description": "Image references are \"<id>:<image key>\"." },
+        "url": { "type": "string", "minLength": 1 }
+      }
+    },
+    "tiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["urlPrefix", "detailMinZoom"],
+      "properties": {
+        "urlPrefix": { "type": "string", "description": "Source URL is urlPrefix + source name." },
+        "detailMinZoom": { "type": "integer", "minimum": 0 },
+        "overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "tables"],
+          "properties": {
+            "source": { "$ref": "#/$defs/name" },
+            "tables": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/name" } }
+          }
+        },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "paperMinZoom", "patch"],
+          "properties": {
+            "source": { "$ref": "#/$defs/name" },
+            "paperMinZoom": { "type": "integer", "minimum": 0 },
+            "patch": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["color", "opacity", "lineWidth"],
+              "properties": {
+                "color": { "$ref": "#/$defs/hex" },
+                "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+                "lineWidth": { "type": "number", "minimum": 0, "description": "CSS px." }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "name": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+    "mm": { "type": "number", "exclusiveMinimum": 0 },
+    "image": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "lineRaster": {
+          "type": "object",
+          "description": "Parallel lines, tiled seamlessly.",
+          "additionalProperties": false,
+          "required": ["angle", "width", "spacing", "color"],
+          "properties": {
+            "angle": { "enum": [0, 90], "description": "0 = horizontal, 90 = vertical (north-oriented)." },
+            "width": { "$ref": "#/$defs/mm" },
+            "spacing": { "$ref": "#/$defs/mm", "description": "Centre to centre." },
+            "color": { "$ref": "#/$defs/hex" }
+          }
+        },
+        "halfCircle": {
+          "type": "object",
+          "description": "Half circle opening upwards.",
+          "additionalProperties": false,
+          "required": ["diameter", "width", "color"],
+          "properties": {
+            "diameter": { "$ref": "#/$defs/mm", "description": "Outer width, stroke included." },
+            "width": { "$ref": "#/$defs/mm" },
+            "color": { "$ref": "#/$defs/hex" }
+          }
+        },
+        "tick": {
+          "type": "object",
+          "description": "Straight stroke along +x, centred in the image.",
+          "additionalProperties": false,
+          "required": ["length", "width", "color"],
+          "properties": {
+            "length": { "$ref": "#/$defs/mm" },
+            "width": { "$ref": "#/$defs/mm" },
+            "color": { "$ref": "#/$defs/hex" }
+          }
+        }
+      }
+    },
+    "symbol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "table"],
+      "oneOf": [
+        { "required": ["fill"] },
+        { "required": ["line"] },
+        { "required": ["circle"] },
+        { "required": ["icon"] }
+      ],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[1-7][0-9]{2}\\.[0-9]{3}$", "description": "The isom_code value this layer filters on." },
+        "table": { "$ref": "#/$defs/name" },
+        "fill": {
+          "type": "object",
+          "additionalProperties": false,
+          "oneOf": [{ "required": ["color"] }, { "required": ["pattern"] }],
+          "properties": {
+            "color": { "$ref": "#/$defs/hex" },
+            "pattern": { "type": "string", "description": "Image key." }
+          }
+        },
+        "line": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["color", "width"],
+          "properties": {
+            "color": { "$ref": "#/$defs/hex" },
+            "width": { "$ref": "#/$defs/mm" },
+            "dash": {
+              "type": "array",
+              "description": "Alternating dash and gap lengths in mm.",
+              "minItems": 2,
+              "items": { "$ref": "#/$defs/mm" }
+            }
+          }
+        },
+        "circle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["color", "diameter"],
+          "properties": {
+            "color": { "$ref": "#/$defs/hex" },
+            "diameter": { "$ref": "#/$defs/mm" }
+          }
+        },
+        "icon": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["image"],
+          "properties": {
+            "image": { "type": "string", "description": "Image key." },
+            "placement": { "enum": ["point", "line-center"], "default": "point", "description": "line-center rotates the icon to the line's bearing." }
+          }
+        }
+      }
+    }
+  }
+}

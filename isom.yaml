@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=./isom.schema.json
+#
+# The ISOM 2017-2 MapLibre style, defined once. `go generate ./...` turns this
+# file into src/style.json (the MapLibre style) and src/icons.json (the pattern
+# and point-symbol SVGs); never edit those by hand.
+#
+# Every dimension is in mm at 1:15,000, exactly as ISOM 2017-2 states it, and
+# was cross-checked against the OpenOrienteering Mapper "ISOM 2017-2" symbol set.
+# The generator converts once to CSS px at the map scale below.
+
+name: ISOM 2017-2 (1:10000)
+
+scale:
+  specDenominator: 15000 # ISOM dimensions are given at 1:15,000
+  mapDenominator: 10000  # rendered at 1:10,000: every dimension ×1.5 (ISOM 2.9.1)
+  cssDpi: 96
+  # Web-mercator zoom where the map is true 1:10,000: z15 is 2.67 m/px at ~56° N
+  # (1:10,000 at 96 dpi is 2.646 m/px). Up to lockZoom every dimension is a
+  # constant; above it the whole map magnifies ×2 per zoom level up to maxZoom.
+  lockZoom: 15
+  maxZoom: 22
+
+# Screen palette. ISOM defines its inks in CMYK (Appendix 1); these sRGB values
+# use the naive conversion channel = 255·(1−ink)·(1−K), and a p% tint is
+# 255 − p·(255 − channel). Symbols reference colours by anchor; the generator
+# rejects any colour not listed here.
+colors:
+  black: &black "#000000"
+  black65: &black65 "#595959"
+  black50: &black50 "#808080"
+  black25: &black25 "#BFBFBF"
+  black20: &black20 "#CCCCCC"
+  brown: &brown "#D15C00"
+  brown50: &brown50 "#E8AD80"
+  yellow: &yellow "#FFBA36"
+  yellow75: &yellow75 "#FFCB68"
+  yellow50: &yellow50 "#FFDD9B"
+  yellow35: &yellow35 "#FFE7B9"
+  green: &green "#3DFF17"
+  green60: &green60 "#8BFF74"
+  green30: &green30 "#C5FFB9"
+  blue: &blue "#00FFFF"
+  blue70: &blue70 "#4DFFFF"
+  blue50: &blue50 "#80FFFF"
+  purple: &purple "#A626FF"
+  olive: &olive "#9EBA1D" # 520: yellow overprinted with 50% green
+  white: &white "#FFFFFF"
+
+# Source layers the style reads. Each feature carries a string `isom_code`
+# property ("401.000", "521.001", ...) selecting its symbol; codes without a
+# symbol below stay invisible.
+tables: [contours, cliffs, knolls_points, vegetation_areas, water, paths, manmade]
+
+# Images referenced as "<sprite.id>:<key>" by fill patterns and icons, drawn
+# from their ISOM dimensions. Line rasters are north-oriented, which is correct
+# as long as the map is displayed north-up.
+images:
+  "111": # small depression: half circle opening upwards, 0.8 outer width
+    halfCircle: { diameter: 0.8, width: 0.18, color: *brown }
+  slope: # slope line on a contour, drawn along the tick geometry
+    tick: { length: 0.47, width: 0.14, color: *brown }
+  "308": # marsh: horizontal lines
+    lineRaster: { angle: 0, width: 0.10, spacing: 0.30, color: *blue }
+  "407": # slow running, good visibility: vertical lines
+    lineRaster: { angle: 90, width: 0.12, spacing: 0.84, color: *green }
+  "409": # walk, good visibility: vertical lines
+    lineRaster: { angle: 90, width: 0.14, spacing: 0.42, color: *green }
+
+# The symbol stack in ISOM colour order, bottom to top. Each symbol becomes one
+# MapLibre layer; a symbol drawn in two parts (casing and core) is listed twice.
+# Comments mark where a symbol is simplified because MapLibre cannot express it.
+stack:
+  - group: yellow
+    symbols:
+      - { code: "401.000", table: vegetation_areas, fill: { color: *yellow } }
+      - { code: "402.000", table: vegetation_areas, fill: { color: *yellow } }   # hole pattern not drawn
+      - { code: "403.000", table: vegetation_areas, fill: { color: *yellow50 } }
+      - { code: "404.000", table: vegetation_areas, fill: { color: *yellow50 } } # hole pattern not drawn
+      - { code: "412.000", table: vegetation_areas, fill: { color: *yellow } }   # black dot grid not drawn
+      - { code: "413.000", table: vegetation_areas, fill: { color: *yellow50 } } # green dot rows not drawn
+      # 520 belongs to the yellow group despite its 5xx code. Olive is ISOM's
+      # first option; its optional black boundary is drawn only where the border
+      # is clear on the ground, which the data cannot tell.
+      - { code: "520.000", table: manmade, fill: { color: *olive } }
+
+  - group: white
+    symbols:
+      - { code: "405.000", table: vegetation_areas, fill: { color: *white } }
+
+  - group: green30
+    symbols:
+      - { code: "406.000", table: vegetation_areas, fill: { color: *green30 } }
+
+  - group: green60
+    symbols:
+      - { code: "408.000", table: vegetation_areas, fill: { color: *green60 } }
+
+  - group: green
+    symbols:
+      - { code: "407.000", table: vegetation_areas, fill: { pattern: "407" } }
+      - { code: "409.000", table: vegetation_areas, fill: { pattern: "409" } }
+      - { code: "410.000", table: vegetation_areas, fill: { color: *green } }
+
+  - group: blue-tints
+    symbols:
+      - { code: "302.000", table: water, fill: { color: *blue50 } }
+      - { code: "308.000", table: water, fill: { pattern: "308" } }
+
+  - group: black-tints
+    symbols:
+      # 521 large-building variant: 65% black infill (outline in the black group)
+      - { code: "521.001", table: manmade, fill: { color: *black65 } }
+
+  - group: brown50
+    symbols:
+      - { code: "501.000", table: manmade, fill: { color: *brown50 } }
+      # 502 wide road: two 0.14 black edges around a 0.3 brown-50 core, drawn
+      # as a casing under a core
+      - { code: "502.000", table: paths, line: { color: *black, width: 0.58 } }
+      - { code: "502.000", table: paths, line: { color: *brown50, width: 0.30 } }
+
+  - group: blue
+    symbols:
+      - { code: "301.000", table: water, fill: { color: *blue } }
+      - { code: "302.000", table: water, line: { color: *blue, width: 0.10 } } # solid outline variant
+      - { code: "304.000", table: water, line: { color: *blue, width: 0.30 } }
+      - { code: "305.000", table: water, line: { color: *blue, width: 0.18 } }
+      - { code: "306.000", table: water, line: { color: *blue, width: 0.18, dash: [1.25, 0.25] } }
+
+  - group: brown
+    symbols:
+      - { code: "101.000", table: contours, line: { color: *brown, width: 0.14 } }
+      # 101 slope line, carried as 101.001: a short line running from the contour
+      # downhill. Placing the icon along it takes the bearing from the geometry.
+      - { code: "101.001", table: contours, icon: { image: slope, placement: line-center } }
+      - { code: "102.000", table: contours, line: { color: *brown, width: 0.25 } }
+      # dashes are not phase-balanced per feature, which ISOM asks for
+      - { code: "103.000", table: contours, line: { color: *brown, width: 0.10, dash: [2.0, 0.2] } }
+      - { code: "104.000", table: contours, line: { color: *brown, width: 0.18 } } # tags not drawn
+      - { code: "105.000", table: contours, line: { color: *brown, width: 0.18 } } # dots not drawn
+      - { code: "109.000", table: knolls_points, circle: { color: *brown, diameter: 0.5 } }
+      - { code: "111.000", table: knolls_points, icon: { image: "111" } }
+
+  - group: black
+    symbols:
+      - { code: "301.000", table: water, line: { color: *black, width: 0.18 } }   # bank line
+      - { code: "501.000", table: manmade, line: { color: *black, width: 0.14 } } # paved area frame
+      - { code: "503.000", table: paths, line: { color: *black, width: 0.35 } }
+      - { code: "504.000", table: paths, line: { color: *black, width: 0.35, dash: [3.0, 0.25] } }
+      - { code: "505.000", table: paths, line: { color: *black, width: 0.25, dash: [2.0, 0.25] } }
+      - { code: "506.000", table: paths, line: { color: *black, width: 0.18, dash: [1.0, 0.25] } }
+      - { code: "507.000", table: paths, line: { color: *black, width: 0.18, dash: [1.0, 0.25, 1.0, 0.8] } }
+      # 509 railway: 0.35 core with 0.10 borders centred on its edges (0.45
+      # envelope), black dashes 1.5 alternating with white windows 1.0. The
+      # white window is what the core leaves between the borders (0.25).
+      - { code: "509.000", table: manmade, line: { color: *black, width: 0.45 } }
+      - { code: "509.000", table: manmade, line: { color: *white, width: 0.25, dash: [1.0, 1.5] } }
+      - { code: "510.000", table: manmade, line: { color: *black, width: 0.14 } } # pylon bars not drawn
+      - { code: "516.000", table: manmade, line: { color: *black, width: 0.14 } } # tags not drawn
+      - { code: "415.000", table: vegetation_areas, line: { color: *black, width: 0.14 } }
+      # 511 major power line: two 0.14 lines 0.4 apart (centre to centre). The
+      # white core masks what lies between the lines.
+      - { code: "511.000", table: manmade, line: { color: *black, width: 0.54 } }
+      - { code: "511.000", table: manmade, line: { color: *white, width: 0.26 } }
+      - { code: "515.000", table: manmade, line: { color: *black, width: 0.25 } } # dots not drawn
+      - { code: "529.000", table: manmade, line: { color: *black, width: 0.25 } } # tick pairs not drawn
+      - { code: "521.000", table: manmade, fill: { color: *black } }
+      - { code: "521.001", table: manmade, line: { color: *black, width: 0.20 } } # large-building outline
+      - { code: "201.000", table: cliffs, line: { color: *black, width: 0.35 } }  # tags not drawn
+      - { code: "202.000", table: cliffs, line: { color: *black, width: 0.25 } }
+      # 206 above the cliff lines so a massive face reads over its own edges
+      - { code: "206.000", table: cliffs, fill: { color: *black } }
+
+sprite: { id: isom, url: /sprite/isom }
+
+# How the style is wired to a vector-tile server. Source URLs are
+# `urlPrefix + name` (TileJSON), root-relative so the page's origin resolves them.
+tiles:
+  urlPrefix: /tiles/
+  # Detail sources (one per table) render from this zoom up.
+  detailMinZoom: 13
+  # Optional: one combined source whose layers carry the given tables at low
+  # zoom, drawn with the same symbols below detailMinZoom. Point symbols are
+  # left out at that scale.
+  overview:
+    source: overview
+    tables: [vegetation_areas, water, paths, manmade]
+  # Optional: a polygon source outlining where map data exists. From paperMinZoom
+  # up it is opaque white paper under the map, so nothing beneath (such as a
+  # basemap merged in underneath) shows through gaps between fills. Below it the
+  # extent is drawn as a translucent patch so a zoomed-out viewer shows where
+  # maps are.
+  coverage:
+    source: coverage
+    paperMinZoom: 10
+    patch: { color: *brown, opacity: 0.35, lineWidth: 1.2 }
