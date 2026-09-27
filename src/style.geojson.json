@@ -338,7 +338,7 @@
         "isom:pass": "detail"
       },
       "paint": {
-        "fill-color": "#595959"
+        "fill-color": "#808080"
       },
       "source": "manmade",
       "type": "fill"
@@ -484,6 +484,10 @@
       },
       "paint": {
         "line-color": "#00FFFF",
+        "line-dasharray": [
+          12.5,
+          2.5
+        ],
         "line-width": [
           "interpolate",
           [

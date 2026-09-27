@@ -87,10 +87,10 @@ func TestPxMatchesConversionTable(t *testing.T) {
 	}
 }
 
-// Line dimensions as ISOM 2017-2 gives them (mm @1:15,000), cross-checked
-// against the OpenOrienteering Mapper ISOM 2017-2 symbol set. Kept apart from
-// isom.yaml on purpose: this is the independent statement the definition must
-// match.
+// Line dimensions as ISOM 2017-2 gives them (mm @1:15,000), from the symbol
+// drawings of section 3 and the precise definitions of section 3.8. Kept apart
+// from isom.yaml on purpose: this is the independent statement the definition
+// must match.
 var isomLines = map[string]struct {
 	width float64
 	dash  []float64
@@ -103,7 +103,7 @@ var isomLines = map[string]struct {
 	"201.000": {0.35, nil},
 	"202.000": {0.25, nil},
 	"301.000": {0.18, nil},
-	"302.000": {0.10, nil},
+	"302.000": {0.10, []float64{1.25, 0.25}},
 	"304.000": {0.30, nil},
 	"305.000": {0.18, nil},
 	"306.000": {0.18, []float64{1.25, 0.25}},

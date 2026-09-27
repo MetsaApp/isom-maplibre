@@ -5,9 +5,11 @@
 # GeoJSON-source style) and src/icons.json (the pattern and point-symbol SVGs);
 # never edit those by hand.
 #
-# Every dimension is in mm at 1:15,000, exactly as ISOM 2017-2 states it, and
-# was cross-checked against the OpenOrienteering Mapper "ISOM 2017-2" symbol set.
-# The generator converts once to CSS px at the map scale below.
+# Every dimension is in mm at 1:15,000, exactly as ISOM 2017-2 states it: the
+# symbol drawings and text of section 3, the precise definitions of section 3.8,
+# and the colours of Appendix 1 (CMYK printing and colour definitions). Where a
+# value's source is not the symbol's own drawing, a comment cites it. The
+# generator converts once to CSS px at the map scale below.
 
 name: ISOM 2017-2 (1:10000)
 
@@ -27,7 +29,6 @@ scale:
 # rejects any colour not listed here.
 colors:
   black: &black "#000000"
-  black65: &black65 "#595959"
   black50: &black50 "#808080"
   black25: &black25 "#BFBFBF"
   black20: &black20 "#CCCCCC"
@@ -58,8 +59,11 @@ tables: [contours, cliffs, knolls_points, vegetation_areas, water, paths, manmad
 images:
   "111": # small depression: half circle opening upwards, 0.8 outer width
     halfCircle: { diameter: 0.8, width: 0.18, color: *brown }
-  slope: # slope line on a contour, drawn along the tick geometry
-    tick: { length: 0.47, width: 0.14, color: *brown }
+  # Slope line on a contour: 0.4 long (OM), 0.14 wide (ISOM 2017-2 101, page 13
+  # drawing). The icon is centred on the 101.001 geometry rather than starting
+  # on the contour centreline, so it takes the printed length as is.
+  slope:
+    tick: { length: 0.4, width: 0.14, color: *brown }
   "308": # marsh: horizontal lines
     lineRaster: { angle: 0, width: 0.10, spacing: 0.30, color: *blue }
   "407": # slow running, good visibility: vertical lines
@@ -109,8 +113,9 @@ stack:
 
   - group: black-tints
     symbols:
-      # 521 large-building variant: 65% black infill (outline in the black group)
-      - { code: "521.001", table: manmade, fill: { color: *black65 } }
+      # 521 large building: black 50% infill with a 0.2 black outline (ISOM
+      # 2017-2 521, page 32; the outline is in the black group)
+      - { code: "521.001", table: manmade, fill: { color: *black50 } }
 
   - group: brown50
     symbols:
@@ -123,7 +128,8 @@ stack:
   - group: blue
     symbols:
       - { code: "301.000", table: water, fill: { color: *blue } }
-      - { code: "302.000", table: water, line: { color: *blue, width: 0.10 } } # solid outline variant
+      # 302 outline: 0.10 blue, dashed 1.25 / 0.25 (ISOM 2017-2 302, page 22 drawing)
+      - { code: "302.000", table: water, line: { color: *blue, width: 0.10, dash: [1.25, 0.25] } }
       - { code: "304.000", table: water, line: { color: *blue, width: 0.30 } }
       - { code: "305.000", table: water, line: { color: *blue, width: 0.18 } }
       - { code: "306.000", table: water, line: { color: *blue, width: 0.18, dash: [1.25, 0.25] } }
@@ -138,7 +144,8 @@ stack:
       # dashes are not phase-balanced per feature, which ISOM asks for
       - { code: "103.000", table: contours, line: { color: *brown, width: 0.10, dash: [2.0, 0.2] } }
       - { code: "104.000", table: contours, line: { color: *brown, width: 0.18 } } # tags not drawn
-      - { code: "105.000", table: contours, line: { color: *brown, width: 0.18 } } # dots not drawn
+      # 105: 0.18 line; its ø 0.45 dots at 2.0 (CC) are not drawn (ISOM 2017-2 105, page 15)
+      - { code: "105.000", table: contours, line: { color: *brown, width: 0.18 } }
       - { code: "109.000", table: knolls_points, circle: { color: *brown, diameter: 0.5 } }
       - { code: "111.000", table: knolls_points, icon: { image: "111" } }
 
@@ -163,7 +170,8 @@ stack:
       # white core masks what lies between the lines.
       - { code: "511.000", table: manmade, line: { color: *black, width: 0.54 } }
       - { code: "511.000", table: manmade, line: { color: *white, width: 0.26 } }
-      - { code: "515.000", table: manmade, line: { color: *black, width: 0.25 } } # dots not drawn
+      # 515: 0.25 line; its ø 0.6 dot pairs are not drawn (ISOM 2017-2 515, page 31)
+      - { code: "515.000", table: manmade, line: { color: *black, width: 0.25 } }
       - { code: "529.000", table: manmade, line: { color: *black, width: 0.25 } } # tick pairs not drawn
       - { code: "521.000", table: manmade, fill: { color: *black } }
       - { code: "521.001", table: manmade, line: { color: *black, width: 0.20 } } # large-building outline
