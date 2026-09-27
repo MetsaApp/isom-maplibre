@@ -6,9 +6,9 @@ Specification for Orienteering Maps, at 1:10,000.
 
 Every line width, dash, pattern and symbol is computed from the ISOM dimensions
 (mm at 1:15,000, enlarged ×1.5 and converted at 96 dpi), uses the ISOM colours,
-and is stacked in the ISOM colour order. The dimensions are cross-checked against
-the [OpenOrienteering Mapper](https://www.openorienteering.org/apps/mapper/)
-ISOM 2017-2 symbol set.
+and is stacked in the ISOM colour order. The dimensions come from ISOM 2017-2
+itself: the symbol definitions of section 3, the precise definitions of section
+3.8, and the colours of Appendix 1 (CMYK printing and colour definitions).
 
 ## Install
 
@@ -78,7 +78,7 @@ invisible.
 | `vegetation_areas` | polygons, lines | 401.000 to 410.000, 412.000, 413.000, 415.000                        |
 | `water`            | lines, polygons | 301.000, 302.000, 304.000, 305.000, 306.000, 308.000                 |
 | `paths`            | lines           | 502.000 to 507.000                                                   |
-| `manmade`          | lines, polygons | 501.000, 509.000, 510.000, 511.000, 515.000, 516.000, 520.000, 521.000, 521.001 (large building: outline and 65% infill), 529.000 |
+| `manmade`          | lines, polygons | 501.000, 509.000, 510.000, 511.000, 515.000, 516.000, 520.000, 521.000, 521.001 (large building: outline and 50% infill), 529.000 |
 
 A 101.001 slope line is a two-point line from the contour downhill; the symbol
 takes its bearing from it. Coordinates are lng/lat, as for any MapLibre source.

@@ -338,7 +338,7 @@
         "isom:pass": "detail"
       },
       "paint": {
-        "fill-color": "#595959"
+        "fill-color": "#808080"
       },
       "source": "manmade",
       "type": "fill"
@@ -484,6 +484,10 @@
       },
       "paint": {
         "line-color": "#00FFFF",
+        "line-dasharray": [
+          12.5,
+          2.5
+        ],
         "line-width": [
           "interpolate",
           [
@@ -1416,9 +1420,9 @@
             "zoom"
           ],
           15,
-          0.794,
+          0.567,
           22,
-          101.63
+          72.58
         ]
       },
       "source": "vegetation_areas",

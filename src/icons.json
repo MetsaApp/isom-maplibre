@@ -3,5 +3,5 @@
   "isom:308": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"17\" viewBox=\"0 0 4 17\"><path d=\"M0 0.85H4M0 2.55H4M0 4.25H4M0 5.95H4M0 7.65H4M0 9.35H4M0 11.05H4M0 12.75H4M0 14.45H4M0 16.15H4\" fill=\"none\" stroke=\"#00FFFF\" stroke-width=\"0.567\"/></svg>",
   "isom:407": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"62\" height=\"4\" viewBox=\"0 0 62 4\"><path d=\"M2.385 0V4M7.154 0V4M11.923 0V4M16.692 0V4M21.462 0V4M26.231 0V4M31 0V4M35.769 0V4M40.538 0V4M45.308 0V4M50.077 0V4M54.846 0V4M59.615 0V4\" fill=\"none\" stroke=\"#3DFF17\" stroke-width=\"0.68\"/></svg>",
   "isom:409": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"31\" height=\"4\" viewBox=\"0 0 31 4\"><path d=\"M1.192 0V4M3.577 0V4M5.962 0V4M8.346 0V4M10.731 0V4M13.115 0V4M15.5 0V4M17.885 0V4M20.269 0V4M22.654 0V4M25.038 0V4M27.423 0V4M29.808 0V4\" fill=\"none\" stroke=\"#3DFF17\" stroke-width=\"0.794\"/></svg>",
-  "isom:slope": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"3\" height=\"1\" viewBox=\"0 0 3 1\"><path d=\"M0.167 0.5H2.833\" stroke=\"#D15C00\" stroke-width=\"0.794\"/></svg>"
+  "isom:slope": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"3\" height=\"1\" viewBox=\"0 0 3 1\"><path d=\"M0.366 0.5H2.634\" stroke=\"#D15C00\" stroke-width=\"0.794\"/></svg>"
 }

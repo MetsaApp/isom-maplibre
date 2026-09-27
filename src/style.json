@@ -410,7 +410,7 @@
         "isom:pass": "overview"
       },
       "paint": {
-        "fill-color": "#595959"
+        "fill-color": "#808080"
       },
       "source": "overview",
       "source-layer": "manmade",
@@ -566,6 +566,10 @@
       },
       "paint": {
         "line-color": "#00FFFF",
+        "line-dasharray": [
+          12.5,
+          2.5
+        ],
         "line-width": [
           "interpolate",
           [
@@ -1217,9 +1221,9 @@
             "zoom"
           ],
           15,
-          0.794,
+          0.567,
           22,
-          101.63
+          72.58
         ]
       },
       "source": "overview",
@@ -1816,7 +1820,7 @@
       },
       "minzoom": 13,
       "paint": {
-        "fill-color": "#595959"
+        "fill-color": "#808080"
       },
       "source": "manmade",
       "source-layer": "manmade",
@@ -1972,6 +1976,10 @@
       "minzoom": 13,
       "paint": {
         "line-color": "#00FFFF",
+        "line-dasharray": [
+          12.5,
+          2.5
+        ],
         "line-width": [
           "interpolate",
           [
@@ -2950,9 +2958,9 @@
             "zoom"
           ],
           15,
-          0.794,
+          0.567,
           22,
-          101.63
+          72.58
         ]
       },
       "source": "vegetation_areas",
