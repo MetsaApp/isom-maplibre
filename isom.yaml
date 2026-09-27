@@ -165,7 +165,8 @@ stack:
       - { code: "509.000", table: manmade, line: { color: *white, width: 0.25, dash: [1.0, 1.5] } }
       - { code: "510.000", table: manmade, line: { color: *black, width: 0.14 } } # pylon bars not drawn
       - { code: "516.000", table: manmade, line: { color: *black, width: 0.14 } } # tags not drawn
-      - { code: "415.000", table: vegetation_areas, line: { color: *black, width: 0.14 } }
+      # 415: 0.10 (ISOM 2017-2 errata 2020-01-20 corrected 0.14 to 0.10)
+      - { code: "415.000", table: vegetation_areas, line: { color: *black, width: 0.10 } }
       # 511 major power line: two 0.14 lines 0.4 apart (centre to centre). The
       # white core masks what lies between the lines.
       - { code: "511.000", table: manmade, line: { color: *black, width: 0.54 } }
