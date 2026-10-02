@@ -195,12 +195,19 @@ func TestLayerOrderFollowsColourStack(t *testing.T) {
 		{"405.000", "fill", "406.000", "fill"}, // white < green 30%
 		{"406.000", "fill", "408.000", "fill"}, // green 30% < green 60%
 		{"408.000", "fill", "410.000", "fill"}, // green 60% < green
-		{"410.000", "fill", "308.000", "fill"}, // green < blue tints
-		{"521.001", "fill", "501.000", "fill"}, // black tints < brown 50%
-		{"501.000", "fill", "301.000", "fill"}, // brown 50% < blue
-		{"301.000", "fill", "101.000", "line"}, // blue < brown
-		{"101.000", "line", "521.001", "line"}, // brown < black
-		{"202.000", "line", "206.000", "fill"}, // cliff edges < massive cliff face
+		// IOF Printing and Colour Definitions (2022), section 7, column ISOM 2017-2
+		{"410.000", "fill", "520.000", "fill"},   // green areas < olive
+		{"520.000", "fill", "501.000", "fill"},   // olive < brown 50% paved area
+		{"501.000", "fill", "308.000", "fill"},   // paved area < blue areas
+		{"302.000", "fill", "301.000", "fill"},   // blue 50% < blue 100% areas
+		{"301.000", "fill", "521.001", "fill"},   // blue areas < black 50% large building
+		{"521.001", "fill", "502.000", "line"},   // black 50% < road outline and infill
+		{"502.000", "line", "101.000", "line"},   // road < brown lines
+		{"301.000", "fill", "101.000", "line"},   // blue areas < brown lines: contours over water
+		{"101.000", "line", "304.000", "line"},   // brown lines < blue lines: streams over contours
+		{"304.000", "line", "109.000", "circle"}, // blue lines < brown points
+		{"109.000", "circle", "521.001", "line"}, // brown points < black
+		{"202.000", "line", "206.000", "fill"},   // cliff edges < massive cliff face
 	}
 	for _, b := range below {
 		if pos(b[0], b[1]) >= pos(b[2], b[3]) {

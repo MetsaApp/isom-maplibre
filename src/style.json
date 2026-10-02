@@ -193,32 +193,9 @@
           "get",
           "isom_code"
         ],
-        "520.000"
-      ],
-      "id": "ov06-520.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "520.000",
-        "isom:group": "yellow",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#9EBA1D"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "405.000"
       ],
-      "id": "ov07-405.000",
+      "id": "ov06-405.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "405.000",
@@ -241,7 +218,7 @@
         ],
         "406.000"
       ],
-      "id": "ov08-406.000",
+      "id": "ov07-406.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "406.000",
@@ -264,7 +241,7 @@
         ],
         "408.000"
       ],
-      "id": "ov09-408.000",
+      "id": "ov08-408.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "408.000",
@@ -287,7 +264,7 @@
         ],
         "407.000"
       ],
-      "id": "ov10-407.000",
+      "id": "ov09-407.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "407.000",
@@ -310,7 +287,7 @@
         ],
         "409.000"
       ],
-      "id": "ov11-409.000",
+      "id": "ov10-409.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "409.000",
@@ -333,7 +310,7 @@
         ],
         "410.000"
       ],
-      "id": "ov12-410.000",
+      "id": "ov11-410.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "410.000",
@@ -354,9 +331,55 @@
           "get",
           "isom_code"
         ],
+        "520.000"
+      ],
+      "id": "ov12-520.000",
+      "maxzoom": 13,
+      "metadata": {
+        "isom:code": "520.000",
+        "isom:group": "olive",
+        "isom:pass": "overview"
+      },
+      "paint": {
+        "fill-color": "#9EBA1D"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "ov13-501.000",
+      "maxzoom": 13,
+      "metadata": {
+        "isom:code": "501.000",
+        "isom:group": "brown50",
+        "isom:pass": "overview"
+      },
+      "paint": {
+        "fill-color": "#E8AD80"
+      },
+      "source": "overview",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
         "302.000"
       ],
-      "id": "ov13-302.000",
+      "id": "ov14-302.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "302.000",
@@ -379,7 +402,7 @@
         ],
         "308.000"
       ],
-      "id": "ov14-308.000",
+      "id": "ov15-308.000",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "308.000",
@@ -400,9 +423,32 @@
           "get",
           "isom_code"
         ],
+        "301.000"
+      ],
+      "id": "ov16-301.000",
+      "maxzoom": 13,
+      "metadata": {
+        "isom:code": "301.000",
+        "isom:group": "blue-tints",
+        "isom:pass": "overview"
+      },
+      "paint": {
+        "fill-color": "#00FFFF"
+      },
+      "source": "overview",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
         "521.001"
       ],
-      "id": "ov15-521.001",
+      "id": "ov17-521.001",
       "maxzoom": 13,
       "metadata": {
         "isom:code": "521.001",
@@ -423,32 +469,9 @@
           "get",
           "isom_code"
         ],
-        "501.000"
-      ],
-      "id": "ov16-501.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "501.000",
-        "isom:group": "brown50",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#E8AD80"
-      },
-      "source": "overview",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "502.000"
       ],
-      "id": "ov17-502.000",
+      "id": "ov18-502.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -456,7 +479,7 @@
       "maxzoom": 13,
       "metadata": {
         "isom:code": "502.000",
-        "isom:group": "brown50",
+        "isom:group": "road",
         "isom:pass": "overview"
       },
       "paint": {
@@ -489,7 +512,7 @@
         ],
         "502.000"
       ],
-      "id": "ov18-502.000",
+      "id": "ov19-502.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -497,7 +520,7 @@
       "maxzoom": 13,
       "metadata": {
         "isom:code": "502.000",
-        "isom:group": "brown50",
+        "isom:group": "road",
         "isom:pass": "overview"
       },
       "paint": {
@@ -528,32 +551,9 @@
           "get",
           "isom_code"
         ],
-        "301.000"
-      ],
-      "id": "ov19-301.000",
-      "maxzoom": 13,
-      "metadata": {
-        "isom:code": "301.000",
-        "isom:group": "blue",
-        "isom:pass": "overview"
-      },
-      "paint": {
-        "fill-color": "#00FFFF"
-      },
-      "source": "overview",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "302.000"
       ],
-      "id": "ov20-302.000",
+      "id": "ov26-302.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -598,7 +598,7 @@
         ],
         "304.000"
       ],
-      "id": "ov21-304.000",
+      "id": "ov27-304.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -639,7 +639,7 @@
         ],
         "305.000"
       ],
-      "id": "ov22-305.000",
+      "id": "ov28-305.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -680,7 +680,7 @@
         ],
         "306.000"
       ],
-      "id": "ov23-306.000",
+      "id": "ov29-306.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -1603,32 +1603,9 @@
           "get",
           "isom_code"
         ],
-        "520.000"
-      ],
-      "id": "d06-520.000",
-      "metadata": {
-        "isom:code": "520.000",
-        "isom:group": "yellow",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "fill-color": "#9EBA1D"
-      },
-      "source": "manmade",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "405.000"
       ],
-      "id": "d07-405.000",
+      "id": "d06-405.000",
       "metadata": {
         "isom:code": "405.000",
         "isom:group": "white",
@@ -1651,7 +1628,7 @@
         ],
         "406.000"
       ],
-      "id": "d08-406.000",
+      "id": "d07-406.000",
       "metadata": {
         "isom:code": "406.000",
         "isom:group": "green30",
@@ -1674,7 +1651,7 @@
         ],
         "408.000"
       ],
-      "id": "d09-408.000",
+      "id": "d08-408.000",
       "metadata": {
         "isom:code": "408.000",
         "isom:group": "green60",
@@ -1697,7 +1674,7 @@
         ],
         "407.000"
       ],
-      "id": "d10-407.000",
+      "id": "d09-407.000",
       "metadata": {
         "isom:code": "407.000",
         "isom:group": "green",
@@ -1720,7 +1697,7 @@
         ],
         "409.000"
       ],
-      "id": "d11-409.000",
+      "id": "d10-409.000",
       "metadata": {
         "isom:code": "409.000",
         "isom:group": "green",
@@ -1743,7 +1720,7 @@
         ],
         "410.000"
       ],
-      "id": "d12-410.000",
+      "id": "d11-410.000",
       "metadata": {
         "isom:code": "410.000",
         "isom:group": "green",
@@ -1764,9 +1741,55 @@
           "get",
           "isom_code"
         ],
+        "520.000"
+      ],
+      "id": "d12-520.000",
+      "metadata": {
+        "isom:code": "520.000",
+        "isom:group": "olive",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#9EBA1D"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "501.000"
+      ],
+      "id": "d13-501.000",
+      "metadata": {
+        "isom:code": "501.000",
+        "isom:group": "brown50",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#E8AD80"
+      },
+      "source": "manmade",
+      "source-layer": "manmade",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
         "302.000"
       ],
-      "id": "d13-302.000",
+      "id": "d14-302.000",
       "metadata": {
         "isom:code": "302.000",
         "isom:group": "blue-tints",
@@ -1789,7 +1812,7 @@
         ],
         "308.000"
       ],
-      "id": "d14-308.000",
+      "id": "d15-308.000",
       "metadata": {
         "isom:code": "308.000",
         "isom:group": "blue-tints",
@@ -1810,9 +1833,32 @@
           "get",
           "isom_code"
         ],
+        "301.000"
+      ],
+      "id": "d16-301.000",
+      "metadata": {
+        "isom:code": "301.000",
+        "isom:group": "blue-tints",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#00FFFF"
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
         "521.001"
       ],
-      "id": "d15-521.001",
+      "id": "d17-521.001",
       "metadata": {
         "isom:code": "521.001",
         "isom:group": "black-tints",
@@ -1833,39 +1879,16 @@
           "get",
           "isom_code"
         ],
-        "501.000"
-      ],
-      "id": "d16-501.000",
-      "metadata": {
-        "isom:code": "501.000",
-        "isom:group": "brown50",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "fill-color": "#E8AD80"
-      },
-      "source": "manmade",
-      "source-layer": "manmade",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "502.000"
       ],
-      "id": "d17-502.000",
+      "id": "d18-502.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
       },
       "metadata": {
         "isom:code": "502.000",
-        "isom:group": "brown50",
+        "isom:group": "road",
         "isom:pass": "detail"
       },
       "minzoom": 13,
@@ -1899,14 +1922,14 @@
         ],
         "502.000"
       ],
-      "id": "d18-502.000",
+      "id": "d19-502.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
       },
       "metadata": {
         "isom:code": "502.000",
-        "isom:group": "brown50",
+        "isom:group": "road",
         "isom:pass": "detail"
       },
       "minzoom": 13,
@@ -1938,204 +1961,9 @@
           "get",
           "isom_code"
         ],
-        "301.000"
-      ],
-      "id": "d19-301.000",
-      "metadata": {
-        "isom:code": "301.000",
-        "isom:group": "blue",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "fill-color": "#00FFFF"
-      },
-      "source": "water",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "302.000"
-      ],
-      "id": "d20-302.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "metadata": {
-        "isom:code": "302.000",
-        "isom:group": "blue",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-dasharray": [
-          12.5,
-          2.5
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          0.567,
-          22,
-          72.58
-        ]
-      },
-      "source": "water",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "304.000"
-      ],
-      "id": "d21-304.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "metadata": {
-        "isom:code": "304.000",
-        "isom:group": "blue",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.701,
-          22,
-          217.73
-        ]
-      },
-      "source": "water",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "305.000"
-      ],
-      "id": "d22-305.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "metadata": {
-        "isom:code": "305.000",
-        "isom:group": "blue",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "water",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
-        "306.000"
-      ],
-      "id": "d23-306.000",
-      "layout": {
-        "line-cap": "butt",
-        "line-join": "round"
-      },
-      "metadata": {
-        "isom:code": "306.000",
-        "isom:group": "blue",
-        "isom:pass": "detail"
-      },
-      "minzoom": 13,
-      "paint": {
-        "line-color": "#00FFFF",
-        "line-dasharray": [
-          6.95,
-          1.39
-        ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            2
-          ],
-          [
-            "zoom"
-          ],
-          15,
-          1.02,
-          22,
-          130.56
-        ]
-      },
-      "source": "water",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "==",
-        [
-          "get",
-          "isom_code"
-        ],
         "101.000"
       ],
-      "id": "d24-101.000",
+      "id": "d20-101.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -2176,7 +2004,7 @@
         ],
         "101.001"
       ],
-      "id": "d25-101.001",
+      "id": "d21-101.001",
       "layout": {
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -2217,7 +2045,7 @@
         ],
         "102.000"
       ],
-      "id": "d26-102.000",
+      "id": "d22-102.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -2258,7 +2086,7 @@
         ],
         "103.000"
       ],
-      "id": "d27-103.000",
+      "id": "d23-103.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -2303,7 +2131,7 @@
         ],
         "104.000"
       ],
-      "id": "d28-104.000",
+      "id": "d24-104.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -2344,7 +2172,7 @@
         ],
         "105.000"
       ],
-      "id": "d29-105.000",
+      "id": "d25-105.000",
       "layout": {
         "line-cap": "butt",
         "line-join": "round"
@@ -2383,12 +2211,184 @@
           "get",
           "isom_code"
         ],
+        "302.000"
+      ],
+      "id": "d26-302.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "metadata": {
+        "isom:code": "302.000",
+        "isom:group": "blue",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-dasharray": [
+          12.5,
+          2.5
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          0.567,
+          22,
+          72.58
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "304.000"
+      ],
+      "id": "d27-304.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "metadata": {
+        "isom:code": "304.000",
+        "isom:group": "blue",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.701,
+          22,
+          217.73
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "305.000"
+      ],
+      "id": "d28-305.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "metadata": {
+        "isom:code": "305.000",
+        "isom:group": "blue",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
+        "306.000"
+      ],
+      "id": "d29-306.000",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "metadata": {
+        "isom:code": "306.000",
+        "isom:group": "blue",
+        "isom:pass": "detail"
+      },
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#00FFFF",
+        "line-dasharray": [
+          6.95,
+          1.39
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "exponential",
+            2
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          1.02,
+          22,
+          130.56
+        ]
+      },
+      "source": "water",
+      "source-layer": "water",
+      "type": "line"
+    },
+    {
+      "filter": [
+        "==",
+        [
+          "get",
+          "isom_code"
+        ],
         "109.000"
       ],
       "id": "d30-109.000",
       "metadata": {
         "isom:code": "109.000",
-        "isom:group": "brown",
+        "isom:group": "brown-points",
         "isom:pass": "detail"
       },
       "minzoom": 13,
@@ -2445,7 +2445,7 @@
       },
       "metadata": {
         "isom:code": "111.000",
-        "isom:group": "brown",
+        "isom:group": "brown-points",
         "isom:pass": "detail"
       },
       "minzoom": 13,

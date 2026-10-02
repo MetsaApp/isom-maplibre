@@ -8,7 +8,9 @@ Every line width, dash, pattern and symbol is computed from the ISOM dimensions
 (mm at 1:15,000, enlarged ×1.5 and converted at 96 dpi), uses the ISOM colours,
 and is stacked in the ISOM colour order. The dimensions come from ISOM 2017-2
 itself: the symbol definitions of section 3, the precise definitions of section
-3.8, and the colours of Appendix 1 (CMYK printing and colour definitions).
+3.8, and the colours of Appendix 1 (CMYK printing and colour definitions). The colour order is the IOF's table for ISOM 2017-2 in
+"IOF Map Specifications - Printing and Colour Definitions" (2022, the successor of Appendix 1):
+olive above the greens, streams above the contours, contours above lakes.
 
 ## Install
 

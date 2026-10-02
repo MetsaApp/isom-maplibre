@@ -74,6 +74,15 @@ images:
 # The symbol stack in ISOM colour order, bottom to top. Each symbol becomes one
 # MapLibre layer; a symbol drawn in two parts (casing and core) is listed twice.
 # Comments mark where a symbol is simplified because MapLibre cannot express it.
+#
+# The order is the IOF's, column ISOM 2017-2 of the colour order table in "IOF
+# Map Specifications - Printing and Colour Definitions" (February 2022, formerly
+# ISOM 2017 Appendix 1), section 7. Bottom to top: yellow 50/75/100%, white over
+# yellow, green 30/60/100% areas, yellow 100% + green 50% (olive), brown 50%
+# paved area, white over green and brown, blue 50/70/100% areas, black 20%
+# canopy, black 50% large buildings, black 100% road outline, brown 50% road
+# infill, lower purple, brown 100% lines, blue 100% lines, green/brown/blue
+# 100% points, black 100%, white for railroad, course overprint.
 stack:
   - group: yellow
     symbols:
@@ -83,10 +92,6 @@ stack:
       - { code: "404.000", table: vegetation_areas, fill: { color: *yellow50 } } # hole pattern not drawn
       - { code: "412.000", table: vegetation_areas, fill: { color: *yellow } }   # black dot grid not drawn
       - { code: "413.000", table: vegetation_areas, fill: { color: *yellow50 } } # green dot rows not drawn
-      # 520 belongs to the yellow group despite its 5xx code. Olive is ISOM's
-      # first option; its optional black boundary is drawn only where the border
-      # is clear on the ground, which the data cannot tell.
-      - { code: "520.000", table: manmade, fill: { color: *olive } }
 
   - group: white
     symbols:
@@ -106,10 +111,25 @@ stack:
       - { code: "409.000", table: vegetation_areas, fill: { pattern: "409" } }
       - { code: "410.000", table: vegetation_areas, fill: { color: *green } }
 
+  - group: olive
+    symbols:
+      # 520: olive (yellow 100% + green 50%) is above every green, so the
+      # vegetation underneath does not show through; contours and black stay
+      # on top, as ISOM 520 asks. Olive is ISOM's first option; its optional
+      # black boundary is drawn only where the border is clear on the ground,
+      # which the data cannot tell.
+      - { code: "520.000", table: manmade, fill: { color: *olive } }
+
+  - group: brown50
+    symbols:
+      - { code: "501.000", table: manmade, fill: { color: *brown50 } }
+
   - group: blue-tints
     symbols:
       - { code: "302.000", table: water, fill: { color: *blue50 } }
       - { code: "308.000", table: water, fill: { pattern: "308" } }
+      # blue 100% areas are above the 50% tints
+      - { code: "301.000", table: water, fill: { color: *blue } }
 
   - group: black-tints
     symbols:
@@ -117,22 +137,12 @@ stack:
       # 2017-2 521, page 32; the outline is in the black group)
       - { code: "521.001", table: manmade, fill: { color: *black50 } }
 
-  - group: brown50
+  - group: road
     symbols:
-      - { code: "501.000", table: manmade, fill: { color: *brown50 } }
       # 502 wide road: two 0.14 black edges around a 0.3 brown-50 core, drawn
       # as a casing under a core
       - { code: "502.000", table: paths, line: { color: *black, width: 0.58 } }
       - { code: "502.000", table: paths, line: { color: *brown50, width: 0.30 } }
-
-  - group: blue
-    symbols:
-      - { code: "301.000", table: water, fill: { color: *blue } }
-      # 302 outline: 0.10 blue, dashed 1.25 / 0.25 (ISOM 2017-2 302, page 22 drawing)
-      - { code: "302.000", table: water, line: { color: *blue, width: 0.10, dash: [1.25, 0.25] } }
-      - { code: "304.000", table: water, line: { color: *blue, width: 0.30 } }
-      - { code: "305.000", table: water, line: { color: *blue, width: 0.18 } }
-      - { code: "306.000", table: water, line: { color: *blue, width: 0.18, dash: [1.25, 0.25] } }
 
   - group: brown
     symbols:
@@ -146,6 +156,19 @@ stack:
       - { code: "104.000", table: contours, line: { color: *brown, width: 0.18 } } # tags not drawn
       # 105: 0.18 line; its ø 0.45 dots at 2.0 (CC) are not drawn (ISOM 2017-2 105, page 15)
       - { code: "105.000", table: contours, line: { color: *brown, width: 0.18 } }
+
+  - group: blue
+    symbols:
+      # blue 100% lines are above the brown lines: a stream is drawn over the
+      # contours it crosses
+      # 302 outline: 0.10 blue, dashed 1.25 / 0.25 (ISOM 2017-2 302, page 22 drawing)
+      - { code: "302.000", table: water, line: { color: *blue, width: 0.10, dash: [1.25, 0.25] } }
+      - { code: "304.000", table: water, line: { color: *blue, width: 0.30 } }
+      - { code: "305.000", table: water, line: { color: *blue, width: 0.18 } }
+      - { code: "306.000", table: water, line: { color: *blue, width: 0.18, dash: [1.25, 0.25] } }
+
+  - group: brown-points
+    symbols:
       - { code: "109.000", table: knolls_points, circle: { color: *brown, diameter: 0.5 } }
       - { code: "111.000", table: knolls_points, icon: { image: "111" } }
 
