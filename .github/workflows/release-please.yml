@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     timeout-minutes: 15
     permissions:
       contents: read
@@ -36,7 +36,7 @@ jobs:
   release-please:
     needs: test
     if: github.event_name == 'push'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     timeout-minutes: 10
     # Acts as the metsarelease app, not the workflow token: PRs it opens then
     # run CI normally, and Actions itself never needs to open PRs.
@@ -59,7 +59,7 @@ jobs:
   publish:
     needs: release-please
     if: needs.release-please.outputs.created == 'true'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     timeout-minutes: 10
     environment: npm
     permissions:
