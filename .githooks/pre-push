@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Runs scripts/check.sh (the fast checks) before every push, because GitHub
+# Actions CI is off. Enable with: git config core.hooksPath .githooks
+if ! "$(git rev-parse --show-toplevel)/scripts/check.sh" </dev/null; then
+  echo >&2
+  echo "pre-push: scripts/check.sh failed, so nothing was pushed. Fix it, or skip this hook with git push --no-verify." >&2
+  exit 1
+fi
